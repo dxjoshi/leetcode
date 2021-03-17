@@ -15,6 +15,10 @@
 * */
 public class CheckPowersOfThree {
 
+    public static void main(String[] args) {
+        CheckPowersOfThree obj  =new CheckPowersOfThree();
+        obj.checkPowersOfThree(31);
+    }
     public boolean checkPowersOfThree(int n) {
         if(n < 0)
             return false;
