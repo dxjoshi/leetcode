@@ -24,12 +24,7 @@ treeTraversal(TreeNode node) {
 
 - Unlike dynamic programming, which has overlapping sub-problems that can be optimized, 
 the backtracking algorithm is purely brute force and the complexity is generally high.  
-  
-
 - In fact, think about it, are backtracking algorithms a bit similar to dynamic programming? We have repeatedly emphasized in the series of dynamic programming articles that the three points of dynamic programming that need to be clear are "state", "selection" and "base case". Does it correspond to the "path" that has been traveled, and the current "selection list" "And "End Condition"?
-
-
 - To some extent, the brute force solution phase of dynamic programming is the backtracking algorithm. It's just that some problems have the nature of overlapping sub-problems, which can be optimized with dp table or memo to sharply prune the recursive tree, which becomes dynamic programming
-
-
 - It's better to detect invalid cases as soon as possible.
+- Try to look for ways to reduce the search space, this improves the solution for time, as a lot of unnecessary recursions are prevented.[Check the comments in problem#77] 

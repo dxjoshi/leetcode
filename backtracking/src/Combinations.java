@@ -24,7 +24,15 @@ public class Combinations {
             return;
         }
 
-        for (int i=curr; i <= n; i++) {
+/*
+        n-k+1 is a nice idea I found on discuss forum
+        it reduces the search space and improves the runtime
+        If n = 10, k = 5, and you're in the outermost level of recursion, you choose
+        only i = 1...6 , because if you pick i=7 and go into backTracking() you only
+        have 8,9,10 to pick from, so at most you will get [7,8,9,10].
+*/
+
+        for (int i=curr; i <= n-k+1; i++) {
             list.add(i);
             solve(n, k-1, result, list, i+1);
             list.remove(list.size()-1);
