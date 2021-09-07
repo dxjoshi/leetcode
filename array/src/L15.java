@@ -1,21 +1,36 @@
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 /*
 *
-* 53. Maximum Subarray
+* 15. 3Sum
 *
-* Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
-* A subarray is a contiguous part of an array.
-* */
-public class L53 {
+* Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+* Notice that the solution set must not contain duplicate triplets.
+*
+*
+* * */
+public class L15 {
 
-    public int maxSubArray(int[] nums) {
-        // kadanes' algorithm
-        int maxSoFar = nums[0];
-        int maxEndingHere = 0;
-        for (int i = 0; i < nums.length; i++) {
-            maxEndingHere = Math.max(maxEndingHere + nums[i], nums[i]);
-            maxSoFar = Math.max(maxSoFar, maxEndingHere);
+    public List<List<Integer>> threeSum(int[] num) {
+        Arrays.sort(num);
+        List<List<Integer>> res = new LinkedList<>();
+        for (int i = 0; i < num.length-2; i++) {
+            if (i == 0 || (i > 0 && num[i] != num[i-1])) {
+                int lo = i+1, hi = num.length-1, sum = 0 - num[i];
+                while (lo < hi) {
+                    if (num[lo] + num[hi] == sum) {
+                        res.add(Arrays.asList(num[i], num[lo], num[hi]));
+                        while (lo < hi && num[lo] == num[lo+1]) lo++;
+                        while (lo < hi && num[hi] == num[hi-1]) hi--;
+                        lo++; hi--;
+                    }
+                    else if (num[lo] + num[hi] < sum) lo++;
+                    else hi--;
+                }
+            }
         }
-        return maxSoFar;
-
+        return res;
     }
 }
