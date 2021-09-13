@@ -6,6 +6,7 @@
 *
 * */
 public class L19 {
+
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode slow = head, fast = head;
         while (fast != null) {
