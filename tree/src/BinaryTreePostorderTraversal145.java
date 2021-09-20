@@ -14,8 +14,6 @@ public class BinaryTreePostorderTraversal145 {
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         solve(root, result);
-        Queue<Integer> q = new LinkedList<>();
-        q.poll() ; q.
         return result;
     }
 
