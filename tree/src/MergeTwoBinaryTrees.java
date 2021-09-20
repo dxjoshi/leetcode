@@ -23,7 +23,7 @@
  * }
  */
 class MergeTwoBinaryTrees {
-    public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
+    /*public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
 
         if (root1 == null && root2 == null)
             return null;
@@ -40,5 +40,16 @@ class MergeTwoBinaryTrees {
         root1.right = mergeTrees(root1.right, root2.right);
 
         return root1;
+    }*/
+
+    public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
+
+        if(t1==null || t2 == null) return t1 == null ? t2 : t1;
+
+        t1.val += t2.val;
+        t1.left = mergeTrees(t1.left, t2.left);
+        t1.right = mergeTrees(t1.right, t2.right);
+
+        return t1;
     }
 }
