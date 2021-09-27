@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 /*
 *
 * 409. Longest Palindrome
@@ -20,6 +23,7 @@ public class LongestPalindrome409 {
             res+=(lowercase[i]/2)*2;
             res+=(uppercase[i]/2)*2;
         }
+
         return res == s.length() ? res : res+1;
     }
 }
