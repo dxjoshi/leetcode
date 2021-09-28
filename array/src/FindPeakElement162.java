@@ -11,7 +11,6 @@
 public class FindPeakElement162 {
     public int findPeakElement(int[] nums) {
         if(nums.length == 1) return 0; // single element
-
         int n = nums.length;
 
         // check if 0th/n-1th index is the peak element
