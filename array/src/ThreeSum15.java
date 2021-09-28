@@ -11,7 +11,7 @@ import java.util.List;
 *
 *
 * * */
-public class L15 {
+public class ThreeSum15 {
 
     public List<List<Integer>> threeSum(int[] num) {
         Arrays.sort(num);
