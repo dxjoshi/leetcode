@@ -7,7 +7,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Subsets {
+public class Subsets78 {
     public List<List<Integer>> subsets(int[] nums) {
         // find all permutations of size 0 to nums.length
         List<Integer> list = new ArrayList<>();
