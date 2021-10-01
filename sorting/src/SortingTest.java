@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class SortingTest implements Sort{
@@ -15,7 +17,7 @@ public class SortingTest implements Sort{
         List<int[]> testCases = getTCs();
 
         for (int[] input : testCases) {
-            PrintUtil.print("Input Array: ", input);
+            Util.print("Input Array: ", input);
             System.out.println();
             testRunner.sort(input);
             System.out.println("-----------------------------------");
@@ -23,23 +25,25 @@ public class SortingTest implements Sort{
     }
 
     private static List<Sort> addSortingAlgos() {
-        List<Sort> sortingAlgos = new ArrayList<>();
+        List<Sort> sortingAlgos = new LinkedList<>();
         sortingAlgos.add(new BubbleSort());
         sortingAlgos.add(new SelectionSort());
+        sortingAlgos.add(new InsertionSort());
         return sortingAlgos;
     }
 
     private static List<int[]> getTCs() {
         List<int[]> testCases = new ArrayList<>();
-        testCases.add(new int[] {3, 1, 5, 4, 2});
+        testCases.add(new int[] {3, 1, 5, 4, 2, 0});
         testCases.add(new int[] {1, 2, 3, 4, 5});
+        testCases.add(new int[] {5, 17, 23, 9, 11, 10, 4, 3, 2, 1});
         return testCases;
     }
 
     @Override
     public void sort(int[] input) {
         for (Sort algo : sorters) {
-            algo.sort(input);
+            algo.sort(Arrays.copyOf(input, input.length));
         }
     }
 }
