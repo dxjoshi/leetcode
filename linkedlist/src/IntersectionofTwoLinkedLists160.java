@@ -22,6 +22,7 @@ public class IntersectionofTwoLinkedLists160 {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if (headA==null || headB== null) return null;
 
+        StringBuilder b = new StringBuilder(); 
         ListNode t1= headA, t2=headB;
         while(t1!=null && t2!=null && t1!=t2) {
             t1 = t1.next;
@@ -32,6 +33,8 @@ public class IntersectionofTwoLinkedLists160 {
             if (t2==null) t2 = headA;
         }
         return t1;
+
+
 
     }
 }
