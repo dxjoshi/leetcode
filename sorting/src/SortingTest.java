@@ -29,6 +29,7 @@ public class SortingTest implements Sort{
         sortingAlgos.add(new BubbleSort());
         sortingAlgos.add(new SelectionSort());
         sortingAlgos.add(new InsertionSort());
+        //sortingAlgos.add(new CyclicSort());     // only works for test case 4
         return sortingAlgos;
     }
 
@@ -37,6 +38,7 @@ public class SortingTest implements Sort{
         testCases.add(new int[] {3, 1, 5, 4, 2, 0});
         testCases.add(new int[] {1, 2, 3, 4, 5});
         testCases.add(new int[] {5, 17, 23, 9, 11, 10, 4, 3, 2, 1});
+        testCases.add(new int[] {3, 1, 5, 4, 2, 8, 14, 9, 13, 11, 12, 6, 10, 7});
         return testCases;
     }
 
