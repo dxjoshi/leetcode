@@ -29,6 +29,7 @@ public class SortingTest implements Sort{
         sortingAlgos.add(new BubbleSort());
         sortingAlgos.add(new SelectionSort());
         sortingAlgos.add(new InsertionSort());
+        sortingAlgos.add(new QuickSort());
         //sortingAlgos.add(new CyclicSort());     // only works for test case 4
         return sortingAlgos;
     }
