@@ -28,4 +28,8 @@ public class L278 {
         return hi;
     }
 
+    private boolean isBadVersion(int mid) {
+        return true;
+    }
+
 }
