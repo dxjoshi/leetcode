@@ -22,8 +22,6 @@ public class QuickSort implements Sort
     private void sort(int[] input, int start, int end) {
         if (start<end) {
            int idx = partition(input, start, end);
-
-
            sort(input, start, idx-1);
            sort(input, idx+1, end);
         }
