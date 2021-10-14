@@ -14,4 +14,12 @@
 - Suffix tree is a compressed trie of all the suffixes of a given string.   
 - Suffix trees help in solving a lot of string related problems like pattern matching, finding distinct substrings in a given string, finding longest palindrome etc.
 - **Compressed Trie:**
-    - All edges of a trie that direct to a node having single child are combined together to form a single edge and their edge labels are concatenated. 
+    - All edges of a trie that direct to a node having single child are combined together to form a single edge and their edge labels are concatenated.  
+    - Also it has atmost 'N' leaves, where 'N' is the number of strings inserted in the compressed trie.    
+    - Now both the facts: Each internal node having atleast two children, and that there are N leaves, implies that there are atmost (2N-1) nodes in the trie. So the space complexity of a compressed trie is O(N) as compared to the O(N^2) of a normal trie. 
+- **Suffix Tree:**      
+    - A Suffix Tree for a given text is a compressed trie for all suffixes of the given text.   
+
+## Segement Tree    
+- A Segment Tree (ST) is a binary tree that is build on top of an (usually integer) array so that we can solve the Range Min/Max/Sum Query as well as any Range Update Query of this array in O(log N) time instead of the naive O(N) time. 
+- Given an array A of N (usually integer) elements, we can build the corresponding RMinQ/RMaxQ/RSumQ Segment Tree in O(N) time.
