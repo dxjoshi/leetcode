@@ -8,8 +8,38 @@
 *
 *
 * * */
-public class L75 {
+public class SortColors75 {
 
+    public void sortColors(int[] nums) {
+        // nums[0 to low-1] --> 0 | nums[high+1 to n-1] --> 2
+        // low, mid=0 and high=n-1
+        // i==0 -> swap(nums, low, mid) low++, mid++
+        // i==1 -> mid++
+        // i==2 -> swap (nums, mid, high) and high--
+
+
+        int low=0, mid=0, high=nums.length-1;
+        while (mid<=high)    {
+            if (nums[mid]==0) {
+                swap(nums, low, mid);
+                low++;
+                mid++;
+            } else if (nums[mid]==1) {
+                mid++;
+            } else if (nums[mid]==2) {
+                swap(nums, mid, high);
+                high--;
+            }
+
+        }
+    }
+
+    public void swap(int[] nums, int first, int second) {
+        nums[first] = nums[first] + nums[second];
+        nums[second] = nums[first] - nums[second];
+        nums[first] = nums[first] - nums[second];
+    }
+/*
     public void sortColors(int[] nums) {
         //dutch flag problem
         // low, mid, high needed and will mark the separation between 0 1s and 2s
@@ -35,4 +65,5 @@ public class L75 {
         nums[first] = nums[second];
         nums[second] = temp;
     }
+*/
 }

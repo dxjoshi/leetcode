@@ -11,7 +11,7 @@ While the next permutation of arr = [3,2,1] is [1,2,3] because [3,2,1] does not 
 Given an array of integers nums, find the next permutation of nums.
 
 The replacement must be in place and use only constant extra memory.
-* 
+*
 * */
 public class NextPermutation31 {
     public void nextPermutation(int[] nums) {
