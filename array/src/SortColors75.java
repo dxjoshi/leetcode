@@ -34,11 +34,20 @@ public class SortColors75 {
         }
     }
 
+/*
+    //if both indexes same then results are incorrect
     public void swap(int[] nums, int first, int second) {
         nums[first] = nums[first] + nums[second];
         nums[second] = nums[first] - nums[second];
         nums[first] = nums[first] - nums[second];
     }
+*/
+private void swap(int[] nums, int first, int second) {
+    int temp = nums[first];
+    nums[first] = nums[second];
+    nums[second] = temp;
+}
+
 /*
     public void sortColors(int[] nums) {
         //dutch flag problem
