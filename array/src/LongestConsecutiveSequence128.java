@@ -9,6 +9,27 @@ import java.util.Set;
 * */
 public class LongestConsecutiveSequence128 {
 
+    //Stefan Pochmann - walk each streak
+/*
+    public int longestConsecutive(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for(int n : nums) {
+            set.add(n);
+        }
+        int best = 0;
+        for(int n : set) {
+            if(!set.contains(n - 1)) {  // only check for one direction
+                int m = n + 1;
+                while(set.contains(m)) {
+                    m++;
+                }
+                best = Math.max(best, m - n);
+            }
+        }
+        return best;
+    }
+*/
+
     public int longestConsecutive(int[] nums) {
         if(nums == null || nums.length == 0) return 0;
         Set<Integer> set = new HashSet<Integer>();
