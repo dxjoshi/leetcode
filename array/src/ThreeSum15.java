@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -12,6 +13,40 @@ import java.util.List;
 *
 * * */
 public class ThreeSum15 {
+
+    public List<List<Integer>> threeSum1(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (nums == null || nums.length <3) return res;
+        Arrays.sort(nums);
+        for (int i=0; i< nums.length-2; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) {              // skip same result
+                continue;
+            }
+            res.addAll(twoSum(nums, i+1, nums.length-1, nums[i]));
+        }
+        return res;
+    }
+
+    public List<List<Integer>> twoSum(int[] nums, int begin, int end, int k) {
+        List<List<Integer>> res = new ArrayList<>();
+        int target = k * -1;
+        while (begin < end) {
+            int sum = nums[begin] + nums[end];
+            if (sum == target) {
+                res.add(Arrays.asList(k, nums[begin], nums[end]));
+                while (begin<end && nums[begin] == nums[begin+1]) begin++;
+                while (begin<end && nums[end] == nums[end-1]) end--;
+                begin++;
+                end--;
+
+            } else if (sum > target) {
+                end--;
+            }  else {
+                begin++;
+            }
+        }
+        return res;
+    }
 
     public List<List<Integer>> threeSum(int[] num) {
         Arrays.sort(num);
