@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import java.util.PriorityQueue;
 
 /*
@@ -26,6 +28,24 @@ public class KthSmallestElementInABST230 {
         solve(root.left, maxHeap, k);
         solve(root.right, maxHeap, k);
 
+    }
+*/
+
+/*
+    // https://leetcode.com/problems/kth-smallest-element-in-a-bst/discuss/63783/Two-Easiest-In-Order-Traverse-(Java)
+    // [Better Explaination] https://leetcode.com/problems/kth-smallest-element-in-a-bst/discuss/642294/Java-Using-Stack-as-Iterator-Picture-explain-Clean-code-O(H-%2B-k)
+    public int kthSmallest(TreeNode root, int k) {
+        List<Integer> res = new ArrayList<>();
+        solve(root, res, k);
+        return res.get(k-1);
+    }
+
+    public void solve(TreeNode root, List<Integer> res, int k)  {
+        if (root == null || res.size() == k) return;
+
+        solve(root.left, res, k);
+        res.add(root.val);
+        solve(root.right, res, k);
     }
 */
 

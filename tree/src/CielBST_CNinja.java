@@ -16,14 +16,9 @@ public class CielBST_CNinja {
                 return node.data;
             }
 
-            // Traverse right sub-tree
-            if (x > node.data) {
-
+            if (x > node.data) {    // Traverse right sub-tree
                 node = node.right;
-            }
-
-            // Traverse left sub-tree
-            else {
+            } else {    // Traverse left sub-tree
                 ceil = node.data;
                 node = node.left;
             }
