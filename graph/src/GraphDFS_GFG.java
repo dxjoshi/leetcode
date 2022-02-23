@@ -11,7 +11,6 @@ public class GraphDFS_GFG {
         ArrayList<Integer> res = new ArrayList<Integer>();
         solve(adj, 0, res);
         return res;
-        // Code here
     }
 
     public void solve(ArrayList<ArrayList<Integer>> adj, int itr, ArrayList<Integer> res)    {
