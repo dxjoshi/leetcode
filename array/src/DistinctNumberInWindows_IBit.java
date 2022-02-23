@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /*
 You are given an array of N integers, A1, A2 ,..., AN and an integer B. Return the of count of distinct numbers in all windows of size B.
@@ -36,5 +38,85 @@ public class DistinctNumberInWindows_IBit {
             System.out.println(list);
         }
         return res;
+    }
+
+    /*Correct solution*/
+    public int[] dNums1(int[] A, int B) {
+        if (B > A.length) return null;
+
+        int[] ans = new int[A.length - B + 1];
+        HashMap<Integer, Integer> h = new HashMap<>();
+        int count = B;
+
+        for (int i = 0; i < B; i++) {
+            int tmp = h.getOrDefault(A[i], -1);
+            if (tmp != -1) {
+                count--;
+            }
+            h.put(A[i], tmp + 1);
+        }
+        ans[0] = count;
+        int ansIdx = 1;
+        for (int i = B; i < A.length; i++) {
+            //System.out.print("h: " + h);
+            Integer tmp = h.remove(A[i - B]);
+            //System.out.println(" tmp: " + tmp);
+            if (tmp == 0) {
+                count--;
+            } else {
+                h.put(A[i-B], tmp - 1);
+            }
+
+            tmp = h.getOrDefault(A[i], -1);
+            if (tmp == -1) {
+                count++;
+            }
+
+            h.put(A[i], tmp + 1);
+            ans[ansIdx++] = count;
+        }
+
+        return ans;
+    }
+
+    /*Correct solution-2*/
+    public int[] dNums2(int[] A, int B) {
+
+        int n = A.length;
+        if(B > n ) return new int[0];
+
+        List<Integer> result = new ArrayList<Integer>();
+
+        int i=0,j=i;
+
+        Map<Integer,Integer> mp = new HashMap<Integer,Integer>();
+
+        while(i <= n-B){
+            while(j-i+1 <= B){
+                int count = mp.getOrDefault(A[j],0);
+                mp.put(A[j],count+1);
+                j++;
+            }
+
+            result.add(mp.size());
+
+            if(mp.get(A[i]) > 1){
+                int count = mp.get(A[i]);
+                mp.put(A[i],count-1);
+            }else{
+                mp.remove(A[i]);
+            }
+            i++;
+        }
+
+        int arr [] = new int[result.size()];
+
+        int k=0;
+
+        for(int x:result){
+            arr[k++] = x;
+        }
+
+        return arr;
     }
 }
