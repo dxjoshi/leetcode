@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /*
 *
 * 300. Longest Increasing Subsequence
@@ -9,6 +11,49 @@
 public class LongestIncreasingSubsequence300 {
     static int[][] dp = new int[2501][2501];
     static int[] arr = new int[2501];
+
+    // https://leetcode.com/problems/longest-increasing-subsequence/discuss/74824/JavaPython-Binary-search-O(nlogn)-time-with-explanation
+
+    public int lengthOfLIS1(int[] nums) {
+        int[] tails = new int[nums.length];
+        int size = 0;
+        for (int x : nums) {
+            int i = 0, j = size;
+            while (i != j) {
+                int m = (i + j) / 2;
+                if (tails[m] < x)
+                    i = m + 1;
+                else
+                    j = m;
+            }
+            tails[i] = x;
+            // System.out.print(x + " - ");
+            // for(int t=0;t<tails.length;t++) { System.out.print(tails[t]+ ", "); }
+            // System.out.println();
+
+            if (i == size) ++size;
+        }
+        return size;
+    }
+
+    // https://leetcode.com/problems/longest-increasing-subsequence/discuss/1595288/Java-%2B-Dynamic-Programming-%2B-O(n2)-and-O(nlogn)-%2B-With-explanation
+    public int lengthOfLIS2(int[] nums) {
+        int n = nums.length;
+        int[] dp = new int[n];
+        Arrays.fill(dp, 1);
+        int max = 1;
+        for(int i=1; i < n; i++){
+            for(int j=0; j <= i-1; j++){
+                if(nums[i] > nums[j])
+                    dp[i] = Math.max(dp[i], 1 + dp[j]);
+            }
+            max = Math.max(max, dp[i]);
+        }
+        return max;
+    }
+
+
+    /*---------------------------------*/
     public int lengthOfLIS(int[] nums) {
         // recursive: TLE
         //return solve(nums, 0, Integer.MIN_VALUE);
