@@ -3,7 +3,7 @@ import java.util.LinkedHashSet;
 
 public class LFUCache460_V2 {
 //    https://leetcode.com/problems/lfu-cache/discuss/94515/Java-O(1)-Accept-Solution-Using-HashMap-DoubleLinkedList-and-LinkedHashSet
-    
+
     private Node head = null;
     private int cap = 0;
     private HashMap<Integer, Integer> valueHash = null;
