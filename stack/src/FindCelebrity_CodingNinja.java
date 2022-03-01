@@ -18,7 +18,7 @@ public class FindCelebrity_CodingNinja {
             return true;
         }
     }
-    public static int findCelebrity(int n) {
+    public static int findCelebrityStack(int n) {
         // Create a stack and push all ids in it.
         Stack<Integer> ids = new Stack<Integer>();
         for(int i = 0; i < n; i++) {
@@ -68,5 +68,50 @@ public class FindCelebrity_CodingNinja {
 
         return celebrity;
     }
+
+    public static int findCelebrityTwoPointer(int n) {
+
+        // Two pointers pointing at start and end of search space.
+        int p = 0, q = n - 1;
+
+        // Finding celebrity.
+        while(p < q) {
+            if(Runner.knows(p, q)) {
+                // This means p cannot be celebrity.
+                p++;
+            }
+            else {
+                // This means q cannot be celebrity.
+                q--;
+            }
+        }
+
+        int celebrity = p;
+        boolean knowAny = false, knownToAll = true;
+
+        // Verify whether the celebrity knows any other person.
+        for(int i = 0; i < n; i++) {
+            if(Runner.knows(celebrity, i)) {
+                knowAny = true;
+                break;
+            }
+        }
+
+        // Verify whether the celebrity is known to all the other person.
+        for(int i = 0; i < n; i++) {
+            if(i != celebrity && !Runner.knows(i, celebrity)) {
+                knownToAll = false;
+                break;
+            }
+        }
+
+        if(knowAny || !knownToAll) {
+            // If verificatin failed, then it means there is no celebrity at the party.
+            celebrity = -1;
+        }
+
+        return celebrity;
+    }
+
 
 }
