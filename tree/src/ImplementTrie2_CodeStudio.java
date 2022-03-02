@@ -87,29 +87,19 @@ public class ImplementTrie2_CodeStudio {
     // In this function we are removing the word from "TRIE".
     public void erase(String word){
         TrieNode curr = root;
-        TrieNode toBeDeleted = null;
-
         // Iterating through the string word.
         for(int i=0;i<word.length();i++){
             int index = word.charAt(i) - 'a';
-
             // Store the parent of current character.
             TrieNode parent = curr;
             curr = curr.childern[index];
             curr.prefixCount--;
-
-
-            toBeDeleted = null;
-
             // If the prefixCount of current node is 0 that means we have reached at the end of the word that has to be deleted.
             if(curr.prefixCount == 0){
                 parent.childern[index] = null;
-                toBeDeleted = curr;
             }
         }
-
         curr.wordCount--;
-        toBeDeleted = null;
     }
 
 }
