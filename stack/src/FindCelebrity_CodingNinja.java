@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
 import java.util.Stack;
 
 /*
@@ -70,7 +73,6 @@ public class FindCelebrity_CodingNinja {
     }
 
     public static int findCelebrityTwoPointer(int n) {
-
         // Two pointers pointing at start and end of search space.
         int p = 0, q = n - 1;
 
