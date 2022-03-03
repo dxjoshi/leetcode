@@ -5,6 +5,7 @@
 * The solution set must not contain duplicate subsets. Return the solution in any order.
 */
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Subsets78 {
@@ -32,5 +33,25 @@ public class Subsets78 {
             solve(nums, result, list, size);
             list.remove(list.size()-1);
         }
+    }
+
+    // BIT Manipulation: https://takeuforward.org/data-structure/power-set-print-all-the-possible-subsequences-of-the-string/
+    static ArrayList<String> AllPossibleStrings(String s) {
+        int n = s.length();
+        ArrayList<String>ans=new ArrayList<>();
+        for (int num = 0; num < (1 << n); num++) {
+            String sub = "";
+            for (int i = 0; i < n; i++) {
+                //check if the ith bit is set or not
+                if ((num & (1 << i))!=0) {
+                    sub += s.charAt(i);
+                }
+            }
+            if (sub.length() > 0) {
+                ans.add(sub);
+            }
+        }
+        Collections.sort(ans);
+        return ans;
     }
 }
