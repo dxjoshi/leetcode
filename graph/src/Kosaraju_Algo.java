@@ -24,12 +24,11 @@ public class Kosaraju_Algo {
     }
 
 /*
-    SCC: 1 2 3
-    SCC: 5 6 4
-    SCC: 0
+    Sort all the nodes according to their topo sort(loosely based topo sort as we may have cycles here)
+    Transpose the graph i.e reverse all the edges of the graph
+    Use the topo sort or the increasing order of finishing time to find the strongly connected components using DFS.
 */
-
-    void kosaRaju2(ArrayList<ArrayList<Integer>> adj, int n)
+    void kosaRaju(ArrayList<ArrayList<Integer>> adj, int n)
     {
         int vis[] = new int[n];
         Stack<Integer> st = new Stack<Integer>();
@@ -61,38 +60,6 @@ public class Kosaraju_Algo {
             }
         }
 
-    }
-
-    void kosaRaju(ArrayList<ArrayList<Integer>> adj, int n) {
-
-        Stack<Integer> topo = new Stack<>();
-        int[] vis = new int[n];
-        for(int i=0; i< n; i++) {
-            if (vis[i] == 0) {
-                dfs(i, topo, adj, vis);
-            }
-        }
-
-        ArrayList<ArrayList<Integer>> transpose = new ArrayList<>();
-        for (int i = 0; i < n; i++)
-            transpose.add(new ArrayList<Integer>());
-
-        for(int i = 0;i<n;i++) {
-            vis[i] = 0;
-            for(Integer it: adj.get(i)) {
-                transpose.get(it).add(i);
-            }
-        }
-
-        while(topo.size() > 0) {
-            int i = topo.peek();
-            topo.pop();
-            if (vis[i] == 0) {
-                System.out.print("SCC: ");
-                revDfs(i, transpose, vis);
-                System.out.println();
-            }
-        }
     }
 
     public static void main(String args[])
