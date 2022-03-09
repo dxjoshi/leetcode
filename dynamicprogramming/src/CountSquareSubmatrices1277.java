@@ -1,7 +1,7 @@
 /*
 Given a m * n matrix of ones and zeros, return how many square submatrices have all ones.
 */
-public class CountSquerSubmatrices1277 {
+public class CountSquareSubmatrices1277 {
     public int countSquares(int[][] A) {
         int res = 0;
         for (int i = 0; i < A.length; ++i) {
