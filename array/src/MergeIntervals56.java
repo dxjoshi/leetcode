@@ -31,4 +31,29 @@ public class MergeIntervals56 {
         }
         return list.toArray(new int[list.size()][]);
     }
+
+    // https://leetcode.com/problems/merge-intervals/discuss/21222/A-simple-Java-solution
+
+    public int[][] mergeTwo(int[][] intervals) {
+        if (intervals.length == 1) return intervals;
+        int n = intervals.length;
+        List<int[]> res = new ArrayList<>();
+
+        Arrays.sort(intervals, (a, b) -> a[0]-b[0]);
+        res.add(intervals[0]);
+
+        for(int i=1, j=0; i<n; i++)  {
+            int[] lRes = res.get(res.size()-1);
+
+            if (intervals[i][0] >= lRes[0] && intervals[i][0] <= lRes[1])   {
+                lRes[1] = Math.max(lRes[1], intervals[i][1]);
+            } else {
+                res.add(intervals[i]);
+
+            }
+        }
+
+        return res.toArray(new int[res.size()][]);
+    }
+
 }
