@@ -21,6 +21,7 @@ public class QuickSort implements Sort
 
     private void sort(int[] input, int start, int end) {
         if (start<end) {
+            //find partition index and sort remaining partitions (excluding partition element)
            int idx = partition(input, start, end);
            sort(input, start, idx-1);
            sort(input, idx+1, end);
@@ -28,6 +29,8 @@ public class QuickSort implements Sort
     }
 
     private int partition(int[] input, int start, int end) {
+        // mark end as pivot index and element
+        // To find the partition index j, from start till end-1 check if elements are less than pivot element
         int pIdx = end;
         int pivot = input[pIdx];
         int j = start-1;
