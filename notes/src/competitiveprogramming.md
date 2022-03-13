@@ -1,76 +1,76 @@
 ### CP Algos
 
 **Topics to cover:**     
-    - Sieve Of Eratosthenes
-    - Square Root
-    - Newton Raphson Method
-    - Factors of a number
-    - Modulo Properties
-    - Multiplicative Modulo Inverse
-    - HCF or GCD
-    - LCM
-    - Euclidean Algorithm
-    - 2 Closest Points in 2D Plane (N log^2 N)
-    - 2 Pointers (Two Pointers)
-    - 2-SAT
-    - Articulation Points
-    - BFS 2D
-    - BFS
-    - BIT - Binary Indexed Tree (Fenwick Tree)
-    - Biconnected Components (Online Bridge)
-    - Bitset
-    - Bridge Tree in Graph
-    - Bridges in Graph
-    - Centroid Decomposition
-    - Convex Hull (Dynamic)
-    - Convex Hull (Graham's Scan)
-    - DFS - Cycle Detection in Directed Graph
-    - DSU (Disjoint Set Union)
-    - DSU On Trees
-    - Digit DP
-    - Dijkstra
-    - Discrete Logarithm
-    - Euler Path
-    - Extended Euclidean Algorithm (Extensive)
-    - Extra
-    - FFT (Iterative)
-    - FFT (Recursive)
-    - FFT Applications
-    - Factorials with nCr
-    - Floyd Warshall
-    - Gaussian Elimination
-    - Geometry
-    - Grundy Number (Nim Game)
-    - Hashing (Strings)
-    - Heavy Light Decomposition (HLD)
-    - Intervals Handling
-    - KMP
-    - Kruskal's MST
-    - LCA (with Time Traversal DFS)
-    - Logical CF Problems
-    - Matching (Hopcroft-Karp) in Bipartite Graph
-    - Matrix Struct
-    - MaxFlow - Push Relabel [V^2 sqrt(E)]
-    - MaxFlow - Push Relabel [V^3]
-    - Min Cost Max Flow - Dijkstra
-    - Mo's Algorithm
-    - Negative Cycles in Directed Graph
-    - Ordered Statistic Tree (PBDS)
-    - Parallel Binary Search
-    - Persistent Segment Tree
-    - Prim's MST
-    - Primitive Root
-    - Random Generator
-    - SPFA
-    - SQRT Decomposition
-    - Segment Tree
-    - Sparse Matrix (RMQ)
-    - String Rotation (Booth's Algorithm)
-    - Strongly Connected Component
-    - Sum Over Subsets DP (
-    - Sweep Line: Intersecting Line Segments
-    - Topological Sort
-    - Treap
-    - Tree Construction with Specific Vertices
-    - Trie
-    - Z Algorithm
+    - Sieve Of Eratosthenes     
+    - Square Root       
+    - Newton Raphson Method     
+    - Factors of a number       
+    - Modulo Properties     
+    - Multiplicative Modulo Inverse     
+    - HCF or GCD        
+    - LCM       
+    - Euclidean Algorithm       
+    - 2 Closest Points in 2D Plane (N log^2 N)      
+    - 2 Pointers (Two Pointers)     
+    - 2-SAT     
+    - Articulation Points       
+    - BFS 2D        
+    - BFS       
+    - BIT - Binary Indexed Tree (Fenwick Tree)      
+    - Biconnected Components (Online Bridge)        
+    - Bitset        
+    - Bridge Tree in Graph      
+    - Bridges in Graph      
+    - Centroid Decomposition        
+    - Convex Hull (Dynamic)     
+    - Convex Hull (Graham's Scan)       
+    - DFS - Cycle Detection in Directed Graph       
+    - DSU (Disjoint Set Union)      
+    - DSU On Trees      
+    - Digit DP      
+    - Dijkstra      
+    - Discrete Logarithm        
+    - Euler Path        
+    - Extended Euclidean Algorithm (Extensive)      
+    - Extra     
+    - FFT (Iterative)       
+    - FFT (Recursive)       
+    - FFT Applications      
+    - Factorials with nCr       
+    - Floyd Warshall        
+    - Gaussian Elimination      
+    - Geometry      
+    - Grundy Number (Nim Game)      
+    - Hashing (Strings)     
+    - Heavy Light Decomposition (HLD)       
+    - Intervals Handling        
+    - KMP       
+    - Kruskal's MST     
+    - LCA (with Time Traversal DFS)     
+    - Logical CF Problems       
+    - Matching (Hopcroft-Karp) in Bipartite Graph       
+    - Matrix Struct     
+    - MaxFlow - Push Relabel [V^2 sqrt(E)]      
+    - MaxFlow - Push Relabel [V^3]      
+    - Min Cost Max Flow - Dijkstra      
+    - Mo's Algorithm        
+    - Negative Cycles in Directed Graph     
+    - Ordered Statistic Tree (PBDS)     
+    - Parallel Binary Search        
+    - Persistent Segment Tree       
+    - Prim's MST        
+    - Primitive Root        
+    - Random Generator      
+    - SPFA      
+    - SQRT Decomposition        
+    - Segment Tree      
+    - Sparse Matrix (RMQ)       
+    - String Rotation (Booth's Algorithm)       
+    - Strongly Connected Component      
+    - Sum Over Subsets DP (     
+    - Sweep Line: Intersecting Line Segments        
+    - Topological Sort      
+    - Treap     
+    - Tree Construction with Specific Vertices      
+    - Trie      
+    - Z Algorithm       
