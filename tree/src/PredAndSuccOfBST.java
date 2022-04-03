@@ -10,7 +10,7 @@ public class PredAndSuccOfBST {
         int data;
         Node left, right;
     }
-    
+
     public static void findPreSuc(Node root, Res p, Res s, int key) {
         if (root == null) return;
         findPreSuc(root.left, p, s, key);

@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 public class MST_Prims_GFG {
+//    https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1
     static class Node {
         int dist, node;
         Node(int d, int n) {

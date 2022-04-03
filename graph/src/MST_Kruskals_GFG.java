@@ -3,6 +3,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class MST_Kruskals_GFG {
+//    https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1
     class Trio
     {
         int w;
