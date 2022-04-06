@@ -1,5 +1,6 @@
 public class MinimumWindowSubstring_L76 {
 //    https://leetcode.com/problems/minimum-window-substring/
+//    https://leetcode.com/problems/minimum-window-substring/discuss/26808/Here-is-a-10-line-template-that-can-solve-most-'substring'-problems
 
     public String minWindow(String s, String t) {
         int [] map = new int[128];

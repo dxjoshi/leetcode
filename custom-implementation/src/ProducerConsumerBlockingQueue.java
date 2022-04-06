@@ -43,8 +43,8 @@ public class ProducerConsumerBlockingQueue {
     public static void main(String args[]){
         BlockingQueue<Integer> sharedQueue = new LinkedBlockingQueue<>();
 
-        Producer2 producer=new Producer2(sharedQueue);
-        Consumer2 consumer=new Consumer2(sharedQueue);
+        Producer producer=new Producer(sharedQueue);
+        Consumer consumer=new Consumer(sharedQueue);
 
         Thread producerThread = new Thread(producer, "ProducerThread");
         Thread consumerThread = new Thread(consumer, "ConsumerThread");
