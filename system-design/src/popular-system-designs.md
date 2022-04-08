@@ -1,4 +1,7 @@
 ## Popular System Designs available over internet
+       
+### Useful Links            
+- [Scalable Logging Architecture](https://www.elastic.co/guide/en/logstash/current/deploying-and-scaling.html)           
         
 ### Leetcode                
 - Credit: [_Spook_](https://leetcode.com/discuss/interview-question/system-design?currentPage=1&orderBy=most_relevant&query=_spook_)        
