@@ -15,157 +15,99 @@ public class CustomDequeue {
     static class Deque {
         Node front;
         Node rear;
-        int Size;
+        int size;
 
         Deque() {
             front = rear = null;
-            Size = 0;
+            size = 0;
         }
 
-        // Function to check whether deque
-        // is empty or not
         boolean isEmpty() { return (front == null); }
 
-        // Function to return the number of
-        // elements in the deque
-        int size() { return Size; }
+        int size() { return size; }
 
-        // Function to insert an element
-        // at the front end
-        void insertFront(int data)
-        {
+        void insertFront(int data) {
             Node newNode = Node.getnode(data);
-            // If true then new element cannot be added
-            // and it is an 'Overflow' condition
-            if (newNode == null)
+            if (newNode == null) {
                 System.out.print("OverFlow\n");
-            else {
-                // If deque is empty
-                if (front == null)
+            } else {
+                if (front == null) {
                     rear = front = newNode;
-
-                    // Inserts node at the front end
-                else {
+                } else {
                     newNode.next = front;
                     front.prev = newNode;
                     front = newNode;
                 }
 
-                // Increments count of elements by 1
-                Size++;
+                size++;
             }
         }
 
-        // Function to insert an element
-        // at the rear end
-        void insertRear(int data)
-        {
+        void insertRear(int data) {
             Node newNode = Node.getnode(data);
-            // If true then new element cannot be added
-            // and it is an 'Overflow' condition
-            if (newNode == null)
+            if (newNode == null) {
                 System.out.print("OverFlow\n");
-            else {
-                // If deque is empty
-                if (rear == null)
+            } else {
+                if (rear == null) {
                     front = rear = newNode;
-
-                    // Inserts node at the rear end
-                else {
+                } else {
                     newNode.prev = rear;
                     rear.next = newNode;
                     rear = newNode;
                 }
-
-                Size++;
+                size++;
             }
         }
 
-        // Function to delete the element
-        // from the front end
-        void deleteFront()
-        {
-            // If deque is empty then
-            // 'Underflow' condition
-            if (isEmpty())
+        void deleteFront() {
+            if (isEmpty()) {
                 System.out.print("UnderFlow\n");
-
-                // Deletes the node from the front end and makes
-                // the adjustment in the links
-            else {
+            } else {
                 Node temp = front;
                 front = front.next;
 
-                // If only one element was present
-                if (front == null)
+                if (front == null) {
                     rear = null;
-                else
+                } else {
                     front.prev = null;
-
-                // Decrements count of elements by 1
-                Size--;
+                }
+                size--;
             }
         }
 
-        // Function to delete the element
-        // from the rear end
-        void deleteRear()
-        {
-            // If deque is empty then
-            // 'Underflow' condition
-            if (isEmpty())
+        void deleteRear() {
+            if (isEmpty()) {
                 System.out.print("UnderFlow\n");
-
-                // Deletes the node from the rear end and makes
-                // the adjustment in the links
-            else {
+            } else {
                 Node temp = rear;
                 rear = rear.prev;
 
-                // If only one element was present
-                if (rear == null)
+                if (rear == null) {
                     front = null;
-                else
+                } else {
                     rear.next = null;
-
-                // Decrements count of elements by 1
-                Size--;
+                }
+                size--;
             }
         }
 
-        // Function to return the element
-        // at the front end
-        int getFront()
-        {
-            // If deque is empty, then returns
-            // garbage value
-            if (isEmpty())
-                return -1;
+        int getFront() {
+            if (isEmpty()) return -1;
             return front.data;
         }
 
-        // Function to return the element
-        // at the rear end
-        int getRear()
-        {
-
-            // If deque is empty, then returns
-            // garbage value
-            if (isEmpty())
-                return -1;
+        int getRear() {
+            if (isEmpty()) return -1;
             return rear.data;
         }
 
-        // Function to delete all the elements
-        // from Deque
-        void erase()
-        {
+        void erase() {
             rear = null;
             while (front != null) {
                 Node temp = front;
                 front = front.next;
             }
-            Size = 0;
+            size = 0;
         }
     }
 }

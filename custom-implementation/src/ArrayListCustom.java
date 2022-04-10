@@ -16,12 +16,12 @@ class CustomArrayList<E> {
     }
 
     public E get(int index) {
-        if (index < 0 || index >= size) throw new IndexOutOfBoundsException("Index: " + index + ", Size " + index);
+        if (index < 0 || index >= size) throw new IndexOutOfBoundsException("Index: " + index + ", size " + index);
         return (E) elementData[index]; // return value on index.
     }
 
     public Object remove(int index) {
-        if (index < 0 || index >= size) throw new IndexOutOfBoundsException("Index: " + index + ", Size " + index);
+        if (index < 0 || index >= size) throw new IndexOutOfBoundsException("Index: " + index + ", size " + index);
 
         Object removedElement = elementData[index];
         for (int i = index; i < size - 1; i++) {

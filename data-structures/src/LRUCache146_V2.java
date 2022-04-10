@@ -58,7 +58,7 @@ public class LRUCache146_V2 {
     }
 
     //delete received node
-    private void delete(Node node) {
+        private void delete(Node node) {
         map.remove(node.key);
         Node nodeNext = node.next;
         Node prev = node.prev;
