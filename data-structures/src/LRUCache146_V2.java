@@ -28,7 +28,7 @@ public class LRUCache146_V2 {
         if(map.containsKey(key)) {
             Node curr = map.get(key);
             delete(curr);
-            add(curr);
+            setListHead(curr);
             return curr.value;
         }
         return -1;
@@ -39,15 +39,15 @@ public class LRUCache146_V2 {
             Node curr = map.get(key);
             curr.value = value;
             delete(curr);
-            add(curr);
+            setListHead(curr);
         } else {
             if(map.size()==capacity) delete(tail.prev);
-            add(new Node(key, value));
+            setListHead(new Node(key, value));
         }
     }
 
-    //add received node after head
-    private void add(Node node) {
+    //setListHead received node after head
+    private void setListHead(Node node) {
         map.put(node.key, node);
         Node headNext = head.next;
         node.next=headNext;

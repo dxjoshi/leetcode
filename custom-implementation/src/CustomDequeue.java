@@ -3,8 +3,7 @@ public class CustomDequeue {
         int data;
         Node prev, next;
 
-        static Node getnode(int data)
-        {
+        static Node getnode(int data) {
             Node newNode = new Node();
             newNode.data = data;
             newNode.prev = newNode.next = null;

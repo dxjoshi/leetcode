@@ -40,4 +40,20 @@ public class BuildingH2O_1117 {
         h.release(2);
     }
 
+
+    class Oxy implements Runnable {
+        @Override
+        public void run() {
+            System.out.println("Release oxygen");
+        }
+    }
+
+    class Hydro implements Runnable {
+        @Override
+        public void run() {
+            System.out.println("Release hydrogen");
+        }
+    }
+
+
 }

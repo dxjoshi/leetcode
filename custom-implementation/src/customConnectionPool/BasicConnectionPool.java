@@ -44,8 +44,7 @@ public class BasicConnectionPool implements IConnectionPool {
             } else throw new RuntimeException("Maximum pool size reached!");
         }
 
-        Connection connection = connectionPool
-                .remove(connectionPool.size() - 1);
+        Connection connection = connectionPool.remove(connectionPool.size() - 1);
 
         try {
             if(!connection.isValid(MAX_TIMEOUT)){
