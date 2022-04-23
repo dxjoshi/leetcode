@@ -3,7 +3,7 @@
 ### Useful Links            
 - [Scalable Logging Architecture](https://www.elastic.co/guide/en/logstash/current/deploying-and-scaling.html)           
 - [Scalable Metrics Aggregation & Monitoring System - Video](https://www.youtube.com/watch?v=UEJ6xq4frEw)                     
-- [High-Throughput Metrics System](https://www.twosigma.com/articles/building-a-high-throughput-metrics-system-using-open-source-software/)                    
+- [High-Throughput Metrics System - Two Sigma](https://www.twosigma.com/articles/building-a-high-throughput-metrics-system-using-open-source-software/)                    
 - [Design a Search Engine - Video](https://www.youtube.com/watch?v=xqzyXicFrTA) 
 - [Search System - Video](https://www.youtube.com/watch?v=CeGtqouT8eA)        
 - [Distributed Web Crawler - Video](https://www.youtube.com/watch?v=BKZxZwUgL3Y)       
@@ -16,8 +16,8 @@
 - [Near Cache Hybrid - Video](https://www.youtube.com/watch?v=uBqysgyyquk&list=PLdsOZAx8I5umhnn5LLTNJbFgwA3xbycar&index=58)    
 - [Choosing Right Caching Topology - Video](https://www.youtube.com/watch?v=vo8-HZjXjvc&list=PLdsOZAx8I5umhnn5LLTNJbFgwA3xbycar&index=57)
 - [Kafka vs Messaging Queues - Video](https://www.youtube.com/watch?v=lwMjjTT1Q-Q&list=PLdsOZAx8I5umhnn5LLTNJbFgwA3xbycar&index=135)                  
+- [Bloom Filter](https://medium.com/system-design-blog/bloom-filter-a-probabilistic-data-structure-12e4e5cf0638)            
 
-Shu
                        
 ### Leetcode                
 - Credit: [_Spook_](https://leetcode.com/discuss/interview-question/system-design?currentPage=1&orderBy=most_relevant&query=_spook_)        
