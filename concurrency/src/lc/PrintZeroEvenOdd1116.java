@@ -1,4 +1,4 @@
-/*
+package lc;/*
 You have a function printNumber that can be called with an integer parameter and prints it to the console.
 
 For example, calling printNumber(7) prints 7 to the console.

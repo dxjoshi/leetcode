@@ -1,3 +1,5 @@
+package lc;
+
 /*
 Suppose we have a class:
 
