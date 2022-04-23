@@ -1,6 +1,6 @@
 ## Popular Java LLD questions solution
 
-### Link to Source Code        
+### Original Links        
 
 - [Shopping Cart LLD](https://drive.google.com/file/d/1kGkbH0aTWl8riru9qX-dLG8MkBLlW2P9/view)       
 - [Hotel Management LLD](https://drive.google.com/file/d/1GFDk4DBOtefSbuUioAQ5D3T2-cH9m47l/view)             
