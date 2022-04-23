@@ -1,14 +1,11 @@
 class User {
-
 	int guestId;
 	Search searchObj;
 
 	public List<Question> getQuestions(String searchString);
-
 }
 
 class Member extends User{
-
 	Account account;
 	List<Badge> badges;
 
@@ -19,56 +16,43 @@ class Member extends User{
 	public void addTag(Question question, Tag tag);
 	public void flag(Entity entity);
 	public List<Badge> getBadges();
-
 }
 
 class Account {
-
 	String name;
 	Address address;
 	int accountId;
-
 	String userName;
 	String password;
 	String email;
-	
 	AccountStatus accountStatus;
-
 	int reputation;
 }
 
 class Moderator extends Member {
-
 	public Boolean closeQuestion(Question question);
 	public Boolean restoreQuestion(Quetion question);
-
 }
 
 class Admin extends Member {
-
 	public Boolean blockMember(Member member);
 	public Boolean unblockMember(Member member);
-
 }
 
 public enum AccountStatus {
-
 	BLOCKED, ACTIVE, CLOSED;
 }
 
 public enum VoteType {
-
 	UPVOTE, DOWNVOTE, CLOSEVOTE, DELETEVOTE;
 }
 
 public class Badge {
-
 	String name;
 	String description;	
 }
 
 public class Entity {
-
 	int entityId;
 	Member creator;
 	Map<VoteType, Integer> votes;
@@ -78,16 +62,13 @@ public class Entity {
 	public boolean flagEntity(Member member);
 	public boolean voteEntity(VoteType voteType);
 	public boolean addComment(Comment comment);
-
 }
 
 public class Comment extends Entity {
-
 	String message;
 }
 
 public class Question extends Entity {
-
 	List<EditHistory> editHistoryList;
 	List<Answer> answerList;
 	List<Tag> tags;
@@ -100,26 +81,21 @@ public class Question extends Entity {
 }
 
 public class Answer extends Entity {
-
 	String answer;
 	Boolean isAccepted;
 	public boolean addAnswer(Question question);
-
 }
 
 public enum QuestionStatus {
-
 	ACTIVE, BOUNTIED, CLOSED, FLAGGED;
 }
 
 public class Tag {
-
 	String name;
 	String description;
-
 }
-public class EditHistory {
 
+public class EditHistory {
 	int editHistoryId;
 	Member creator;
 	Date creationDate;
