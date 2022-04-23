@@ -6,6 +6,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+interface IConnectionPool {
+    Connection getConnection();
+    boolean releaseConnection(Connection connection);
+    String getUrl();
+    String getUser();
+    String getPassword();
+}
+
 public class BasicConnectionPool implements IConnectionPool {
 
     private String url;

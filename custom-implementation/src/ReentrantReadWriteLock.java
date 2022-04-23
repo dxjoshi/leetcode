@@ -1,3 +1,8 @@
+interface ReadWriteLock {
+    ReentrantReadWriteLock.WriteLock writeLock();
+    ReentrantReadWriteLock.ReadLock  readLock();
+}
+
 public class ReentrantReadWriteLock implements ReadWriteLock {
     private int readLockCount;
     private int writeLockCount;

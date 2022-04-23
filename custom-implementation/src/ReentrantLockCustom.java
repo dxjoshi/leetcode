@@ -1,3 +1,9 @@
+interface LockCustom {
+    void lock();
+    void unlock();
+    boolean tryLock();
+}
+
 public class ReentrantLockCustom implements LockCustom {
     int lockHoldCount;
     long IdOfThreadCurrentlyHoldingLock;
