@@ -1,5 +1,3 @@
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -244,8 +242,9 @@ public class Arcesium_1 {
             jsonResponseString += current;
         }
         System.out.println(jsonResponseString.length());
-        Type type = new TypeToken<List<SampleResponse>>(){}.getType();
-        List<SampleResponse> responses = new Gson().fromJson(jsonResponseString, type);
+        List<SampleResponse> responses = new ArrayList<>();
+//        Type type = new TypeToken<List<SampleResponse>>(){}.getType();
+//        List<SampleResponse> responses = new Gson().fromJson(jsonResponseString, type);
         System.out.println(responses);
         return responses;
     }

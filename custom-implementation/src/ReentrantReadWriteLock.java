@@ -58,6 +58,5 @@ public class ReentrantReadWriteLock implements ReadWriteLock {
             writeLockCount--; //decrement writeLockCount.
             notify(); //notify all waiting threads.
         }
-
     }
 }

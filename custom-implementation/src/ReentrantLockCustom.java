@@ -31,10 +31,8 @@ public class ReentrantLockCustom implements LockCustom {
 
     public synchronized void unlock() {
         if(lockHoldCount==0) throw new IllegalMonitorStateException();
-
         lockHoldCount--; //decrement lock hold count by 1
-        if(lockHoldCount==0)
-            notify();
+        if(lockHoldCount==0)     notify();
     }
 
     public synchronized boolean tryLock(){

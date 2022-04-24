@@ -2,6 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LRUCache146_V2 {
+//    https://leetcode.com/problems/lru-cache/discuss/640199/Java%3A-3-in-1-solution(LinkedList%2BHashMap-OR-LinkedHashMap-OR-Custom-LinkedList-%2B-HashMap)/549072/
     class Node {
         int key;
         int value;

@@ -15,7 +15,6 @@ interface IConnectionPool {
 }
 
 public class BasicConnectionPool implements IConnectionPool {
-
     private String url;
     private String user;
     private String password;
@@ -74,17 +73,17 @@ public class BasicConnectionPool implements IConnectionPool {
 
     @Override
     public String getUrl() {
-        return null;
+        return url;
     }
 
     @Override
     public String getUser() {
-        return null;
+        return user;
     }
 
     @Override
     public String getPassword() {
-        return null;
+        return password;
     }
 
     private static Connection createConnection(String url, String user, String password) throws SQLException {

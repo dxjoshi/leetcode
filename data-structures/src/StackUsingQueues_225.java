@@ -2,32 +2,26 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class StackUsingQueues_225 {
-    Queue<Integer> queue;
+//Just use a queue where you "push to front" by pushing to back and then rotating the queue until the new element is at the front(i.e., size-1 times move the front element to the back).
+// https://leetcode.com/problems/implement-stack-using-queues/discuss/62516/Concise-1-Queue-Java-C%2B%2B-Python
+    private Queue<Integer> queue = new LinkedList<>();
 
-    public StackUsingQueues_225() {
-        this.queue=new LinkedList<Integer>();
-    }
-
-    // Push element x onto stack.
     public void push(int x) {
         queue.add(x);
-        for(int i=0;i<queue.size()-1;i++) {
-            queue.add(queue.poll());
-        }
+        for (int i=1; i<queue.size(); i++)
+            queue.add(queue.remove());
     }
 
-    // Removes the element on top of the stack.
-    public void pop() {
-        queue.poll();
+    public int pop() {
+        return queue.remove();
     }
 
-    // Get the top element.
     public int top() {
         return queue.peek();
     }
 
-    // Return whether the stack is empty.
     public boolean empty() {
         return queue.isEmpty();
     }
+
 }
