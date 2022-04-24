@@ -1,13 +1,10 @@
 import java.util.concurrent.TimeUnit;
 
-public class QuickSort implements Sort
-{
-    /*
-    Divide and conquer technique
-    1. Pick a pivot elements(1st/last/median/random)
-    2. Implement partition(input, pivot) - put pivot at its correct location in the sorted array (smaller elements before pivot, greater elements after pivot)
-    3. sort the 2 subarrays on either sides of pivot recursively
-    */
+public class QuickSort implements Sort {
+//    Divide and conquer technique
+//    1. Pick a pivot elements(1st/last/median/random)
+//    2. Implement partition(input, pivot) - put pivot at its correct location in the sorted array (smaller elements before pivot, greater elements after pivot)
+//    3. sort the 2 subarrays on either sides of pivot recursively
 
     @Override
     public void sort(int[] input) {

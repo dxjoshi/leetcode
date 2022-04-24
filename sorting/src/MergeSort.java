@@ -1,13 +1,10 @@
 import java.util.concurrent.TimeUnit;
 
-public class MergeSort implements Sort
-{
-    /*
-    Divide and conquer technique
-    1. Find mid index
-    2. sort the 2 halves, recursively
-    3. Merge the subarrays
-    */
+public class MergeSort implements Sort {
+//    Divide and conquer technique
+//    1. Find mid index
+//    2. sort the 2 halves, recursively
+//    3. Merge the subarrays
 
     @Override
     public void sort(int[] input) {

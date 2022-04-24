@@ -1,10 +1,8 @@
 import java.util.concurrent.TimeUnit;
 
-public class SelectionSort implements Sort
-{
+public class SelectionSort implements Sort {
 //    Scan all items and find the smallest. Swap it into position as the first item.
 //    Repeat the selection sort on the remaining N-1 items.
-
     @Override
     public void sort(int[] input) {
         long startTime = System.nanoTime();
