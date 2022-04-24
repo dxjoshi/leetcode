@@ -12,74 +12,6 @@
        
 ### Solutions     
 
-- [BubbleSort](https://github.com/dxjoshi/leetcode/blob/55ac2045370626042b04da3182012b27e368a71a/sorting/src/BubbleSort.java)                   
-
-
-           public void sort(int[] input) {
-        /*
-                Starting on the left, compare adjacent items and keep “bubbling” the larger one to the right (it’s in its final place).
-                Bubble sort the remaining N -1 items.
-        */
-                long startTime = System.nanoTime();
-                boolean isSwapped;
-        
-                for (int i=input.length-1; i>=1 ; i--) {
-                    isSwapped = false;
-                    for (int j = 0; j <i; j++) {
-                        if(input[j] > input[j+1]) {
-                            Util.swap(input, j, j+1);
-                            isSwapped = true;
-                        }
-                    }
-                    if (!isSwapped) break;
-                }
-        
-                Util.print("Output Array: ", input);
-                long endTime = System.nanoTime();
-                System.out.println("[Bubble Sort | " + TimeUnit.NANOSECONDS.toMicros(endTime -startTime) + " micros]");
-            }
-- [CyclicSort](https://github.com/dxjoshi/leetcode/blob/55ac2045370626042b04da3182012b27e368a71a/sorting/src/CyclicSort.java)                   
-
-
-        public void sort(int[] input) {
-            long startTime = System.nanoTime();
-            for (int i=0; i<=input.length-1;) {
-                if (input[i]-1 != i) {
-                    Util.swap(input, i, input[i]-1);
-                } else {
-                    i++;
-                }
-            }
-    
-            Util.print("Output Array: ", input);
-            long endTime = System.nanoTime();
-            System.out.println("[Selection Sort | " + TimeUnit.NANOSECONDS.toMicros(endTime -startTime) + " micros]");
-        }
-
-- [InsertionSort](https://github.com/dxjoshi/leetcode/blob/55ac2045370626042b04da3182012b27e368a71a/sorting/src/InsertionSort.java)                 
-
-
-        //    Start with a sorted list of 1 element on the left, and N-1 unsorted items on the right.
-        //    Take the first unsorted item (element #2) and insert it into the sorted list, moving elements as necessary.
-        //    We now have a sorted list of size 2, and N -2 unsorted elements. Repeat for all elements.
-            @Override
-            public void sort(int[] input) {
-                long startTime = System.nanoTime();
-                for (int i=0; i<input.length-1; i++) {
-                    for (int j = i+1; j>0; j--) {
-                        if(input[j] < input[j-1]) {
-                            Util.swap(input, j, j-1);
-                        } else {
-                            break;
-                        }
-                    }
-                }
-        
-                Util.print("Output Array: ", input);
-                long endTime = System.nanoTime();
-                System.out.println("[Insertion Sort | " + TimeUnit.NANOSECONDS.toMicros(endTime -startTime) + " micros]");
-            }
-
 - [MergeSort](https://github.com/dxjoshi/leetcode/blob/55ac2045370626042b04da3182012b27e368a71a/sorting/src/MergeSort.java)                 
 
 
@@ -153,6 +85,49 @@
                     j++;
                     k++;
                 }
+            }
+
+- [QuickSort](https://github.com/dxjoshi/leetcode/blob/55ac2045370626042b04da3182012b27e368a71a/sorting/src/QuickSort.java)                 
+
+
+        //    Divide and conquer technique
+        //    1. Pick a pivot elements(1st/last/median/random)
+        //    2. Implement partition(input, pivot) - put pivot at its correct location in the sorted array (smaller elements before pivot, greater elements after pivot)
+        //    3. sort the 2 subarrays on either sides of pivot recursively
+        
+            @Override
+            public void sort(int[] input) {
+                long startTime = System.nanoTime();
+                sort(input, 0, input.length-1);
+        
+                Util.print("Output Array: ", input);
+                long endTime = System.nanoTime();
+                System.out.println("[Quick Sort | " + TimeUnit.NANOSECONDS.toMicros(endTime -startTime) + " micros]");
+            }
+        
+            private void sort(int[] input, int start, int end) {
+                if (start<end) {
+                    //find partition index and sort remaining partitions (excluding partition element)
+                   int idx = partition(input, start, end);
+                   sort(input, start, idx-1);
+                   sort(input, idx+1, end);
+                }
+            }
+        
+            private int partition(int[] input, int start, int end) {
+                // mark end as pivot index and element
+                // To find the partition index j, from start till end-1 check if elements are less than pivot element
+                int pIdx = end;
+                int pivot = input[pIdx];
+                int j = start-1;
+                for(int i=start; i<pIdx; i++) {
+                    if (input[i] <= pivot) {
+                        ++j;
+                        Util.swap(input, i, j);
+                    }
+                }
+                Util.swap(input, j+1, pIdx);
+                return j+1;
             }
 
 - [MergeSortedFiles_Algosec](https://github.com/dxjoshi/leetcode/blob/55ac2045370626042b04da3182012b27e368a71a/sorting/src/MergeSortedFiles_Algosec.java)               
@@ -232,48 +207,73 @@
                 pq.offer(new Pair(line, fileId));
             }
         }
-  
-- [QuickSort](https://github.com/dxjoshi/leetcode/blob/55ac2045370626042b04da3182012b27e368a71a/sorting/src/QuickSort.java)                 
+
+- [BubbleSort](https://github.com/dxjoshi/leetcode/blob/55ac2045370626042b04da3182012b27e368a71a/sorting/src/BubbleSort.java)                   
 
 
-        //    Divide and conquer technique
-        //    1. Pick a pivot elements(1st/last/median/random)
-        //    2. Implement partition(input, pivot) - put pivot at its correct location in the sorted array (smaller elements before pivot, greater elements after pivot)
-        //    3. sort the 2 subarrays on either sides of pivot recursively
-        
-            @Override
-            public void sort(int[] input) {
+           public void sort(int[] input) {
+        /*
+                Starting on the left, compare adjacent items and keep “bubbling” the larger one to the right (it’s in its final place).
+                Bubble sort the remaining N -1 items.
+        */
                 long startTime = System.nanoTime();
-                sort(input, 0, input.length-1);
+                boolean isSwapped;
+        
+                for (int i=input.length-1; i>=1 ; i--) {
+                    isSwapped = false;
+                    for (int j = 0; j <i; j++) {
+                        if(input[j] > input[j+1]) {
+                            Util.swap(input, j, j+1);
+                            isSwapped = true;
+                        }
+                    }
+                    if (!isSwapped) break;
+                }
         
                 Util.print("Output Array: ", input);
                 long endTime = System.nanoTime();
-                System.out.println("[Quick Sort | " + TimeUnit.NANOSECONDS.toMicros(endTime -startTime) + " micros]");
+                System.out.println("[Bubble Sort | " + TimeUnit.NANOSECONDS.toMicros(endTime -startTime) + " micros]");
             }
-        
-            private void sort(int[] input, int start, int end) {
-                if (start<end) {
-                    //find partition index and sort remaining partitions (excluding partition element)
-                   int idx = partition(input, start, end);
-                   sort(input, start, idx-1);
-                   sort(input, idx+1, end);
+- [CyclicSort](https://github.com/dxjoshi/leetcode/blob/55ac2045370626042b04da3182012b27e368a71a/sorting/src/CyclicSort.java)                   
+
+
+        public void sort(int[] input) {
+            long startTime = System.nanoTime();
+            for (int i=0; i<=input.length-1;) {
+                if (input[i]-1 != i) {
+                    Util.swap(input, i, input[i]-1);
+                } else {
+                    i++;
                 }
             }
-        
-            private int partition(int[] input, int start, int end) {
-                // mark end as pivot index and element
-                // To find the partition index j, from start till end-1 check if elements are less than pivot element
-                int pIdx = end;
-                int pivot = input[pIdx];
-                int j = start-1;
-                for(int i=start; i<pIdx; i++) {
-                    if (input[i] <= pivot) {
-                        ++j;
-                        Util.swap(input, i, j);
+    
+            Util.print("Output Array: ", input);
+            long endTime = System.nanoTime();
+            System.out.println("[Selection Sort | " + TimeUnit.NANOSECONDS.toMicros(endTime -startTime) + " micros]");
+        }
+
+- [InsertionSort](https://github.com/dxjoshi/leetcode/blob/55ac2045370626042b04da3182012b27e368a71a/sorting/src/InsertionSort.java)                 
+
+
+        //    Start with a sorted list of 1 element on the left, and N-1 unsorted items on the right.
+        //    Take the first unsorted item (element #2) and insert it into the sorted list, moving elements as necessary.
+        //    We now have a sorted list of size 2, and N -2 unsorted elements. Repeat for all elements.
+            @Override
+            public void sort(int[] input) {
+                long startTime = System.nanoTime();
+                for (int i=0; i<input.length-1; i++) {
+                    for (int j = i+1; j>0; j--) {
+                        if(input[j] < input[j-1]) {
+                            Util.swap(input, j, j-1);
+                        } else {
+                            break;
+                        }
                     }
                 }
-                Util.swap(input, j+1, pIdx);
-                return j+1;
+        
+                Util.print("Output Array: ", input);
+                long endTime = System.nanoTime();
+                System.out.println("[Insertion Sort | " + TimeUnit.NANOSECONDS.toMicros(endTime -startTime) + " micros]");
             }
 
 - [SelectionSort](https://github.com/dxjoshi/leetcode/blob/55ac2045370626042b04da3182012b27e368a71a/sorting/src/SelectionSort.java)                 
