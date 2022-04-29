@@ -298,7 +298,7 @@
       }
 
 
-### Abstract Factory
+### Abstract Factory(Factory Of Factories)      
 - Abstract Factory solves the problem of creating entire product families without specifying their concrete classes.
 - [Source Link](https://refactoring.guru/design-patterns/abstract-factory/java/example#lang-features)       
 
