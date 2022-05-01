@@ -471,13 +471,194 @@
 
 
 ### Facade              
+- It provides a simplified (but limited) interface to a complex system of classes, library or framework.            
+- It provides a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use. It alters an interface, but for a different reason: to simplify the interface.                
+- A facade not only simplifies an interface, it decouples a client from a subsystem of components.               
+- **Facades and adapters may wrap multiple classes, but a facade’s intent is to simplify, while an adapter’s is to convert the interface to something different.**            
 
 
+        public class VideoFile {
+            private String name;
+            private String codecType;
+        
+            public VideoFile(String name) {
+                this.name = name;
+                this.codecType = name.substring(name.indexOf(".") + 1);
+            }
+        
+            public String getCodecType() {
+                return codecType;
+            }
+        
+            public String getName() {
+                return name;
+            }
+        }
+        
+        public interface Codec {
+        }
+        
+        public class MPEG4CompressionCodec implements Codec {
+            public String type = "mp4";
+        }
+        
+        public class OggCompressionCodec implements Codec {
+            public String type = "ogg";
+        }
+        
+        public class CodecFactory {
+            public static Codec extract(VideoFile file) {
+                String type = file.getCodecType();
+                if (type.equals("mp4")) {
+                    System.out.println("CodecFactory: extracting mpeg audio...");
+                    return new MPEG4CompressionCodec();
+                }
+                else {
+                    System.out.println("CodecFactory: extracting ogg audio...");
+                    return new OggCompressionCodec();
+                }
+            }
+        }
+        
+        public class BitrateReader {
+            public static VideoFile read(VideoFile file, Codec codec) {
+                System.out.println("BitrateReader: reading file...");
+                return file;
+            }
+        
+            public static VideoFile convert(VideoFile buffer, Codec codec) {
+                System.out.println("BitrateReader: writing file...");
+                return buffer;
+            }
+        }
+        
+        public class AudioMixer {
+            public File fix(VideoFile result){
+                System.out.println("AudioMixer: fixing audio...");
+                return new File("tmp");
+            }
+        }
+        
+        public class VideoConversionFacade {
+            public File convertVideo(String fileName, String format) {
+                System.out.println("VideoConversionFacade: conversion started.");
+                VideoFile file = new VideoFile(fileName);
+                Codec sourceCodec = CodecFactory.extract(file);
+                Codec destinationCodec;
+                if (format.equals("mp4")) {
+                    destinationCodec = new MPEG4CompressionCodec();
+                } else {
+                    destinationCodec = new OggCompressionCodec();
+                }
+                VideoFile buffer = BitrateReader.read(file, sourceCodec);
+                VideoFile intermediateResult = BitrateReader.convert(buffer, destinationCodec);
+                File result = (new AudioMixer()).fix(intermediateResult);
+                System.out.println("VideoConversionFacade: conversion completed.");
+                return result;
+            }
+        }
+        
+        public class Demo {
+            public static void main(String[] args) {
+                VideoConversionFacade converter = new VideoConversionFacade();
+                File mp4Video = converter.convertVideo("youtubevideo.ogg", "mp4");
+                // ...
+            }
+        }
+        
+        
 ### Bridge              
 
 
 ### Decorator               
+- Using decorators you can wrap objects countless number of times since both target objects and decorators follow the same interface. 
+- The resulting object will get a stacking behavior of all wrappers.              
+- Attaches additional responsibilities to an object dynamically.  
+- Decorator provides a flexible alternative to subclassing for extending functionality.  
 
+
+        public abstract class Pizza {
+            String description = "Basic Pizza";
+        
+            public String getDescription() { return description; }
+            abstract double price();
+        }
+        
+        public class StuffedCrust extends Pizza {
+            private String description;
+        
+            public StuffedCrust() { this.description = "Stuffed crust pizza"; }
+        
+            @Override
+            public String getDescription() { return description; }
+        
+            public double price() { return 200.0; }
+        }
+        
+        public class ThinCrust extends Pizza {
+            private String description;
+        
+            public ThinCrust() { this.description  = "Thin crust pizza"; }
+        
+            @Override
+            public String getDescription() { return description; }
+        
+            public double price() { return 100.0; }
+        }
+        
+        ------------Decorator
+        public abstract class PizzaDecorator extends Pizza {
+            Pizza pizza;
+            public abstract String getDescription();
+        }
+        
+        public class Capsicum extends PizzaDecorator {
+            public Capsicum(Pizza pizza) {
+                this.pizza = pizza;
+            }
+        
+            @Override
+            public String getDescription() { return pizza.getDescription() + " + Capcsicum"; }
+        
+            @Override
+            public double price() { return 25.5 + pizza.price(); }
+        }
+        
+        public class Cheese extends PizzaDecorator {
+            public Cheese(Pizza pizza) {
+                this.pizza = pizza;
+            }
+        
+            @Override
+            public String getDescription() { return pizza.getDescription() + " + Cheese"; }
+        
+            @Override
+            public double price() { return 50.5 + pizza.price(); }
+        }
+
+        public class Olive extends PizzaDecorator {
+            public Olive(Pizza pizza) { this.pizza = pizza; }
+        
+            @Override
+            public String getDescription() { return pizza.getDescription() + " + Olive"; }
+        
+            @Override
+            public double price() { return 30.0 + pizza.price(); }
+        }
+
+        public class Runner {
+            public static void main(String[] args) {
+                // Trying to make a thin-crust Pizza with olives, capsicum, extra cheese!!
+        
+                Pizza pizza = new ThinCrust();
+                pizza = new Olive(pizza);
+                pizza = new Capsicum(pizza);
+                pizza = new Cheese(pizza);
+                System.out.println(String.format("%s [Total price: %s]",
+                        pizza.getDescription(), pizza.price()));
+            }
+        }
+        
 
 ### Template                
 
