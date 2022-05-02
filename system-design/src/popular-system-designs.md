@@ -38,7 +38,7 @@
 [Netflix](https://github.com/dxjoshi/leetcode/blob/4c5e7ce6041d064b5f82682d677aaccb13255c65/system-design/resources/leetcode_spook_designs/Netflix.png)     
 ![Netflix](https://github.com/dxjoshi/leetcode/blob/4c5e7ce6041d064b5f82682d677aaccb13255c65/system-design/resources/leetcode_spook_designs/Netflix.png)        
         
-- **Bidding/Auction System(Ebay)**              
+- **Tinder System Design**              
 [Tinder](https://github.com/dxjoshi/leetcode/blob/4c5e7ce6041d064b5f82682d677aaccb13255c65/system-design/resources/leetcode_spook_designs/Tinder.png)       
 ![Tinder](https://github.com/dxjoshi/leetcode/blob/4c5e7ce6041d064b5f82682d677aaccb13255c65/system-design/resources/leetcode_spook_designs/Tinder.png)      
         
