@@ -658,10 +658,73 @@
                         pizza.getDescription(), pizza.price()));
             }
         }
-        
 
 ### Template                
+-- It defines the skeleton of an algorithm in a method, deferring some steps to subclasses and lets subclasses redefine certain steps of an algorithm without changing the algorithm’s structure.   
+-- A hook is a method that is declared in the abstract class, but only given an empty or default implementation. This gives subclasses the ability to “hook into” the algorithm at various points, if they wish; a subclass is also free to ignore the hook.
 
+        -------------------MilkShakeTemplate
+        public abstract class MilkShakeTemplate {
+            public void makeAwesomeShake() {
+                addMilk();
+                addBaseIngredients();
+                shakeIt();
+                if (needToppings()) {           // This is a hook method
+                    addToppings();
+                }
+            }
+        
+            // abstract methods follow Hollywood Principle: MilkShakeTemplate(high-level class) will call implementations of these method like in FruitMilkShake and FlavouredMilkShkae(low-level)
+            public abstract void addBaseIngredients();
+            public abstract void addToppings();
+        
+            private void addMilk() {
+                System.out.println("Adding Milk");
+            }
+        
+            private void shakeIt() {
+                System.out.println("Shaking it!!");
+            }
+        
+            public boolean needToppings() {
+                return true;
+            }
+        }
+
+        public class FlavouredMilkShake extends MilkShakeTemplate{
+            public void addBaseIngredients() {
+                System.out.println("Adding artificial flavouring");
+            }
+        
+            public void addToppings() {
+                System.out.println("Adding toppings");
+            }
+        }
+
+        public class FruitMilkShake extends MilkShakeTemplate {
+            public void addBaseIngredients() {
+                System.out.println("Adding fresh fruits");
+            }
+        
+            public void addToppings() {
+                System.out.println("Adding toppings");
+            }
+        
+            @Override
+            public boolean needToppings() {
+                return false;
+            }
+        }
+
+        -------------------Runner
+        public class Runner {
+            public static void main(String[] args) {
+                MilkShakeTemplate fruitShake = new FruitMilkShake();
+                MilkShakeTemplate flavouredShake = new FlavouredMilkShake();
+                fruitShake.makeAwesomeShake();
+                flavouredShake.makeAwesomeShake();
+            }
+        }
 
 ### Mediator                
 
@@ -670,10 +733,248 @@
 
 
 ### Observer                
+- Defines one-to-many dependency between objects so that when one object changes state, all of its dependents are notified and updated automatically.  
+- Strive for loosely coupled designs between objects that interact.  
+- Follows a IPublisher-Subscriber model  
+
+        
+        ---------------------Subsriber
+        public interface ISubscriber {
+            void onUpdate(Integer runs);
+        }
+        
+        public class Cricbuzz implements ISubscriber {
+            Integer totalScore = 0;
+            Integer overs = 0;
+        
+            IPublisher publisher;
+        
+            public Cricbuzz(IPublisher publisher) {
+                this.publisher = publisher;
+                publisher.addListerner(this);
+            }
+        
+            @Override
+            public void onUpdate(Integer runs) {
+                if (runs == -1) {
+                    totalScore = 0;
+                    overs = 0;
+                    return;
+                }
+        
+                overs++;
+                totalScore += runs;
+                System.out.println(String.format("CRICBUZZ: Total score: %d | Overs: %d| Run rate: %.2f(This over: %d).", totalScore, overs,
+                        (double) totalScore/overs, runs));
+            }
+        }
+
+        public class GoogleUpdates implements ISubscriber {
+            Integer totalScore = 0;
+            Integer overs = 0;
+        
+            IPublisher publisher;
+        
+            public GoogleUpdates(IPublisher publisher) {
+                this.publisher = publisher;
+                publisher.addListerner(this);
+            }
+        
+            @Override
+            public void onUpdate(Integer runs) {
+                if (runs == -1) {
+                    totalScore = 0;
+                    overs = 0;
+                    return;
+                }
+                overs++;
+                totalScore += runs;
+                System.out.println(String.format("GOOGLE: %d runs in %d overs(This over: %d).", totalScore, overs, runs));
+            }
+        }
+
+        -----------------------Publisher
+        public interface IPublisher {
+        
+            void addListerner(ISubscriber subscriber);
+            void removeListerner(ISubscriber subscriber);
+            void notifyListerners();
+            void publish(Integer overs);
+        }
+        
+        public class CricketMatchUpdate implements IPublisher {
+        
+            List<ISubscriber> subscribers;
+            Integer runsPerOVer;
+        
+            public CricketMatchUpdate() {
+                this.subscribers = new ArrayList<>();
+            }
+        
+            public void addListerner(ISubscriber subscriber) {
+                subscribers.add(subscriber);
+            }
+        
+            public void removeListerner(ISubscriber subscriber) {
+                subscribers.remove(subscriber);
+            }
+        
+            public void notifyListerners() {
+                subscribers.forEach(subscriber -> subscriber.onUpdate(runsPerOVer));
+            }
+        
+            private void update(Integer runs) {
+                this.runsPerOVer = runs;
+                notifyListerners();
+            }
+        
+            public void publish(Integer overs) {
+                update(-1);
+                Random random = new Random();
+                int max = 5; // Test match
+                if (overs <= 20) {
+                 //T20 match
+                    max = 20;
+                } else if (overs <= 50){
+                 // ODI match
+                    max = 10;
+                }
+                for (int i = 1; i <= overs; i++) {
+                    try {
+                        Thread.sleep(200);
+                        update(random.nextInt(max+1));
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+
+        -------------------Runner
+        public class Runner {
+            public static void main(String[] args) {
+                IPublisher cricketScore = new CricketMatchUpdate();
+                // Adding subscribers to the Cricket Updates publisher
+                ISubscriber google = new GoogleUpdates(cricketScore);
+                ISubscriber cricbuzz = new Cricbuzz(cricketScore);
+        
+                // Start the match
+                System.out.println("--------------------T-20 match updates--------------------");
+                cricketScore.publish(20);
+                System.out.println("--------------------ODI match updates--------------------");
+                cricketScore.publish(50);
+                System.out.println("--------------------Test match updates--------------------");
+                cricketScore.publish(120);
+        
+            }
+        }
+
 
 
 ### Strategy                
+- Defines a family of algorithms, encapsulates each one and makes them interchangeable.  
+- Strategy lets the algorithm vary independently from clients that use it.  
+> In the example code, each GroceryStore **HAS-A** Billing and Payment strategy.
 
+
+        --------------------IBilling 
+        public interface IBilling {
+            void generateBill();
+        }
+        
+        public class ManualBilling implements IBilling {
+            public void generateBill(){
+                System.out.println("Bill generated Manually!!");
+            }
+        }
+
+        public class ScanBilling implements IBilling {
+            public void generateBill(){
+                System.out.println("Bill generated through QR Scan!!");
+            }
+        }
+
+        --------------------IPayment
+        public interface IPayment {
+            void processPayment();
+        }
+        
+        public class UpiPayment implements IPayment {
+            public void processPayment() {
+                System.out.println("Making UPI payment");
+            }
+        }
+
+        public class CardPayment implements IPayment {
+            public void processPayment() {
+                System.out.println("Making Card Payment");
+            }
+        }
+
+        public class CashPayment implements IPayment {
+            public void processPayment() {
+                System.out.println("Making Cash payment");
+            }
+        }
+
+        --------------------GroceryStoreAbstract
+        public abstract class GroceryStore {
+            IBilling billingStrategy;
+            IPayment paymentStrategy;
+        
+            abstract void catalog();
+        
+            public GroceryStore() { }
+        
+            public void generateBill(){
+                billingStrategy.generateBill();
+            }
+        
+            public void processPayment() {
+                paymentStrategy.processPayment();
+            }
+        
+            public void shop() {
+                catalog();
+                System.out.println("Begin shopping!!");
+                generateBill();
+                processPayment();
+            }
+        }
+
+        public class AmazonFresh extends GroceryStore{
+            public AmazonFresh() {
+                billingStrategy = new ManualBilling();
+                paymentStrategy = new CardPayment();
+            }
+        
+            public void catalog() {
+                System.out.println("Amazon Fresh Catalogue!!");
+            }
+        }
+
+        public class RelianceFresh extends GroceryStore {
+            public RelianceFresh() {
+                billingStrategy = new ScanBilling();
+                paymentStrategy = new UpiPayment();
+            }
+        
+            public void catalog() {
+                System.out.println("Reliance Fresh Catalogue!!");
+            }
+        }
+
+        --------------------Runner
+        public class Runner {
+            public static void main(String[] args) {
+                System.out.println("----Shop with Amazon----");
+                GroceryStore amz = new AmazonFresh();
+                amz.shop();
+                System.out.println("----Shop with Reliance----");
+                GroceryStore rel = new RelianceFresh();
+                rel.shop();
+            }
+        }
 
 ### Command             
 
