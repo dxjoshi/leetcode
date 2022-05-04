@@ -2,6 +2,14 @@
 
 ## Topics:
 
+### Design Principles:
+* [SOLID Principles](#solid-principles)
+* [Principle of Least Knowledge(Law Of Demeter)](#principle-of-least-knowledge)
+* [The Hollywood Principle](#the-hollywood-principle)
+* [Object Oriented Principles](#object-oriented-principles)
+* [Thinking in Patterns](#thinking-in-patterns)
+* [Important Notes](#important-notes)
+
 ### Creational:             
 * [Singleton](#singleton)
 * [Builder](#builder)
@@ -31,6 +39,74 @@
 * [Iterator](#iterator)
 * [Memento](#memento)
 
+
+### SOLID Principles
+- [SOLID Principles](https://www.baeldung.com/solid-principles):
+
+1. **Single Responsibility Principle:**
+   > A class should have only one reason to change.
+2. **Open-Closed Principle:**  
+   > Classes should be open for extension but closed for modification.  
+3. **Liskov Substitution Principle:**  
+   > Subclasses should be substitutable for their base classes.  
+   For ex. If class A is a subtype of class B, then we should be able to replace B with A without breaking the application
+4. **Interface Segregation Principle:**  
+   > Clients should not be forced to implement interfaces that they do not use.
+5. **Dependency Inversion Principle:**     
+   > Depend on abstractions, not on concretions.  
+   > 1. High-level modules should not depend on low-level modules. Both should depend on abstractions. 
+   > 2. Abstractions should not depend on details. Details should depend on abstractions. 
+   
+### Principle of Least Knowledge            
+- [Principle of Least Knowledge(Law Of Demeter)](https://dzone.com/articles/the-genius-of-the-law-of-demeter) 
+For all classes C, and for all methods M attached to C, all objects to which M sends a message must be:     
+
+1. self (this in Java)
+1. M’s argument objects
+1. Instance variable objects of C
+1. Objects created by M, or by functions or methods which M calls
+1. Objects in global variables (static fields in Java)      
+**PS**: The term “objects to which M sends a message” roughly translates to “objects used by M,” or in a more practical definition “objects on which M calls a method on.”
+
+### The Hollywood Principle         
+- [The Hollywood Principle](https://deviq.com/principles/hollywood-principle):      
+- With the Hollywood Principle, we allow low-level components to hook themselves into a system, but the high-level components determine when they are needed, and how. In other words, the high-level components give the low-level components a “don’t call us, we’ll call you” treatment.
+
+### Object Oriented Principles:  
+1. Encapsulate what varies.
+2. Favour composition over inheritance.
+3. Program to an interface, not an implementation.
+4. Strive for loosely coupled designs between objects that interact.
+5. A cohesive class does one thing very well and doesn't try to do or be something else.         
+6. The software must do what its customers wants it to do. Apply basic OO principles to add flexibility. Strive for a maintainable reusable design.     
+7. Don't Repeat Yourself (DRY): Avoid duplicate code by abstracting out things that are common andplacing those things in a single location.    
+    
+### Thinking in Patterns:    
+- Keep it simple (KISS)
+- Design Patterns aren’t a magic bullet; in fact, they’re not even a bullet!    
+- You know you need a pattern when...   
+- Refactoring time is Patterns time!    
+- Take out what you don’t really need. Don’t be afraid to remove a Design Pattern from your design.     
+- If you don’t need it now, don’t do it now.    
+- **Your Mind in Patterns**:   
+    - **The Beginner** uses patterns everywhere.    
+    - As learning progresses, **the Intermediate** mind starts to see where patterns are needed and where they aren’t.  
+    - **The Zen** mind is able to see patterns where they fit naturally.    
+- **Anti-Pattern**:  
+    - An anti-pattern tells you why a bad solution is attractive.
+    - An anti-pattern tells you why that solution in the long term is bad.
+    - An anti-pattern suggests other patterns that are applicable which may provide good solutions. 
+- **Used at Work?** 
+    - Template Method Pattern --- AbstractDataSourceN6Feed in yc-feedhandler implementation     
+
+### Important Notes:
+- **Hollywood Principle vs Dependency Inversion Principle:**
+    - The Dependency Inversion Principle teaches us to avoid the use of concrete classes and instead work as much as possible with abstractions. The Hollywood Principle is a technique for building frameworks or components so that lower-level components can be hooked into the computation, but without creating dependencies between the lower-level components and the higher-level layers. So, they both have the goal of decoupling, but the Dependency Inversion Principle makes a much stronger and general statement about how to avoid dependencies in design.
+    - The Hollywood Principle gives us a technique for creating designs that allow low-level structures to interoperate while preventing other classes from becoming too dependent on them.  
+
+- **IS-A vs HAS-A:** 
+    - IS-A refers to inheritance whereas HAS-A refers to composition or aggregation.
+    - IS-A breaks in certain situations(Square IS-A Rectangle), so use inheritance when one object behaves like another, rather just when the IS-A relationship applies.    
 
 ### Singleton
 - It ensures a class has only one instance, and provides a global point of access to it.                
@@ -539,15 +615,414 @@
 - Using a composite structure, we can apply the same operations over both composites and individual objects. In other words, in most cases we can ignore the differences between compositions of objects and individual objects.            
 
 
+        public abstract class MenuComponent {
+           
+        	public void add(MenuComponent menuComponent) { throw new UnsupportedOperationException(); }
+        	public void remove(MenuComponent menuComponent) { throw new UnsupportedOperationException(); }
+        	public MenuComponent getChild(int i) { throw new UnsupportedOperationException(); }
+          
+        	public String getName() { throw new UnsupportedOperationException(); }
+        	public String getDescription() { throw new UnsupportedOperationException(); }
+        	public double getPrice() { throw new UnsupportedOperationException(); }
+        	public boolean isVegetarian() { throw new UnsupportedOperationException(); }
+          
+        	public void print() { throw new UnsupportedOperationException(); }
+        }
         
+        public class MenuItem extends MenuComponent {
+        	String name;
+        	String description;
+        	boolean vegetarian;
+        	double price;
+            
+        	public MenuItem(String name, String description, boolean vegetarian, double price) { 
+        		this.name = name;
+        		this.description = description;
+        		this.vegetarian = vegetarian;
+        		this.price = price;
+        	}
+          
+        	public String getName() {
+        		return name;
+        	}
+          
+        	public String getDescription() {
+        		return description;
+        	}
+          
+        	public double getPrice() {
+        		return price;
+        	}
+          
+        	public boolean isVegetarian() {
+        		return vegetarian;
+        	}
+          
+        	public void print() {
+        		System.out.print("  " + getName());
+        		if (isVegetarian()) System.out.print("(v)");
+        		System.out.println(", " + getPrice());
+        		System.out.println("     -- " + getDescription());
+        	}
+        }
 
+        public class Menu extends MenuComponent {
+        	ArrayList<MenuComponent> menuComponents = new ArrayList<MenuComponent>();
+        	String name;
+        	String description;
+          
+        	public Menu(String name, String description) {
+        		this.name = name;
+        		this.description = description;
+        	}
+         
+        	public void add(MenuComponent menuComponent) {
+        		menuComponents.add(menuComponent);
+        	}
+         
+        	public void remove(MenuComponent menuComponent) {
+        		menuComponents.remove(menuComponent);
+        	}
+         
+        	public MenuComponent getChild(int i) {
+        		return (MenuComponent)menuComponents.get(i);
+        	}
+         
+        	public String getName() {
+        		return name;
+        	}
+         
+        	public String getDescription() {
+        		return description;
+        	}
+         
+        	public void print() {
+        		System.out.print("\n" + getName());
+        		System.out.println(", " + getDescription());
+        		System.out.println("---------------------");
+          
+        		Iterator<MenuComponent> iterator = menuComponents.iterator();
+        		while (iterator.hasNext()) {
+        			MenuComponent menuComponent = 
+        				(MenuComponent)iterator.next();
+        			menuComponent.print();
+        		}
+        	}
+        }
+
+        public class Waitress {
+        	MenuComponent allMenus;
+         
+        	public Waitress(MenuComponent allMenus) {
+        		this.allMenus = allMenus;
+        	}
+         
+        	public void printMenu() {
+        		allMenus.print();
+        	}
+        }
+
+        public class MenuTestDrive {
+        	public static void main(String args[]) {
+        		MenuComponent pancakeHouseMenu = new Menu("PANCAKE HOUSE MENU", "Breakfast");
+        		MenuComponent dinerMenu = new Menu("DINER MENU", "Lunch");
+        		MenuComponent cafeMenu = new Menu("CAFE MENU", "Dinner");
+        		MenuComponent dessertMenu = new Menu("DESSERT MENU", "Dessert of course!");
+        		MenuComponent coffeeMenu = new Menu("COFFEE MENU", "Stuff to go with your afternoon coffee");
+        		MenuComponent allMenus = new Menu("ALL MENUS", "All menus combined");
+          
+        		allMenus.add(pancakeHouseMenu);
+        		allMenus.add(dinerMenu);
+        		allMenus.add(cafeMenu);
+          
+        		pancakeHouseMenu.add(new MenuItem("K&B's Pancake Breakfast", "Pancakes with scrambled eggs and toast", true, 2.99));
+        		pancakeHouseMenu.add(new MenuItem("Regular Pancake Breakfast", "Pancakes with fried eggs, sausage", false, 2.99));
+        		pancakeHouseMenu.add(new MenuItem("Blueberry Pancakes", "Pancakes made with fresh blueberries, and blueberry syrup", true, 3.49));
+        		pancakeHouseMenu.add(new MenuItem("Waffles", "Waffles with your choice of blueberries or strawberries", true, 3.59));
+                
+                //DinnerMenu contains individual MenuItem as well as DesertMenu(composite object of individual desert items)
+        		dinerMenu.add(new MenuItem("Vegetarian BLT", "(Fakin') Bacon with lettuce & tomato on whole wheat", true, 2.99));
+        		dinerMenu.add(new MenuItem("BLT", "Bacon with lettuce & tomato on whole wheat", false, 2.99));
+        		dinerMenu.add(new MenuItem("Soup of the day", "A bowl of the soup of the day, with a side of potato salad", false, 3.29));
+        		dinerMenu.add(new MenuItem("Hot Dog", "A hot dog, with saurkraut, relish, onions, topped with cheese", false, 3.05));
+        		dinerMenu.add(new MenuItem("Steamed Veggies and Brown Rice", "Steamed vegetables over brown rice", true, 3.99));
+        		dinerMenu.add(new MenuItem("Pasta", "Spaghetti with marinara sauce, and a slice of sourdough bread", true, 3.89));
+           
+        		dinerMenu.add(dessertMenu);
+          
+        		dessertMenu.add(new MenuItem("Apple Pie", "Apple pie with a flakey crust, topped with vanilla icecream", true, 1.59));
+        		dessertMenu.add(new MenuItem("Cheesecake", "Creamy New York cheesecake, with a chocolate graham crust", true, 1.99));
+        		dessertMenu.add(new MenuItem("Sorbet", "A scoop of raspberry and a scoop of lime", true, 1.89));
+        
+        		cafeMenu.add(new MenuItem("Veggie Burger and Air Fries", "Veggie burger on a whole wheat bun, lettuce, tomato, and fries", true, 3.99));
+        		cafeMenu.add(new MenuItem("Soup of the day", "A cup of the soup of the day, with a side salad", false, 3.69));
+        		cafeMenu.add(new MenuItem("Burrito", "A large burrito, with whole pinto beans, salsa, guacamole", true, 4.29));
+        		cafeMenu.add(coffeeMenu);
+        
+        		coffeeMenu.add(new MenuItem("Coffee Cake", "Crumbly cake topped with cinnamon and walnuts", true, 1.59));
+        		coffeeMenu.add(new MenuItem("Bagel", "Flavors include sesame, poppyseed, cinnamon raisin, pumpkin", false, 0.69));
+        		coffeeMenu.add(new MenuItem("Biscotti", "Three almond or hazelnut biscotti cookies", true, 0.89));
+         
+        		Waitress waitress = new Waitress(allMenus);
+        		waitress.printMenu();
+        	}
+        }
 
 ### Proxy               
+- Used to create a representative object that controls access to another object, which may be remote, expensive to create, or in need of securing.    
+- It provides a surrogate or placeholder for another object to control access to it.  A few forms are Remote Proxy, Virtual Proxy.  
+- A remote proxy acts as a local representative to a remote object. A Remote Object is an object that lives in the heap of a different Java Virtual Machine (or more generally, a remote object that is running in a different address space). A Local representative is an object that you can call local methods on and have them forwarded on to the remote object.   
+- Virtual Proxy acts as a representative for an object that may be expensive to create. It often defers the creation of the object until it is needed, it also acts as a surrogate for the object before and while it is being created. After that, the proxy delegates requests directly to the RealSubject.       
+-  Proxies delegate all of the real work to some other object. Each proxy method should, in the end, refer to a service object unless the proxy is a subclass of a service.         
+    
+    
+        public interface ThirdPartyYouTubeLib {
+            HashMap<String, Video> popularVideos();
+            Video getVideo(String videoId);
+        }  
+
+        public class ThirdPartyYouTubeClass implements ThirdPartyYouTubeLib {
+        
+            @Override
+            public HashMap<String, Video> popularVideos() {
+                connectToServer("http://www.youtube.com");
+                return getRandomVideos();
+            }
+        
+            @Override
+            public Video getVideo(String videoId) {
+                connectToServer("http://www.youtube.com/" + videoId);
+                return getSomeVideo(videoId);
+            }
+        
+            private void connectToServer(String server) {
+                System.out.print("Connecting to " + server + "... ");
+            }
+        
+            private HashMap<String, Video> getRandomVideos() {
+                System.out.print("Downloading populars... ");
+                HashMap<String, Video> hmap = new HashMap<String, Video>();
+                hmap.put("catzzzzzzzzz", new Video("sadgahasgdas", "Catzzzz.avi"));
+                return hmap;
+            }
+        
+            private Video getSomeVideo(String videoId) {
+                System.out.print("Downloading video... ");
+                System.out.print("Done!" + "\n");
+                return video;
+            }
+        }
+        
+        public class Video {
+            public String id;
+            public String title;
+            public String data;
+        
+            Video(String id, String title) {
+                this.id = id;
+                this.title = title;
+                this.data = "Random video.";
+            }
+        }
+        
+        // Caching Proxy enables caching of Youtube videos
+        public class YouTubeCacheProxy implements ThirdPartyYouTubeLib {
+            private ThirdPartyYouTubeLib youtubeService;
+            private HashMap<String, Video> cachePopular = new HashMap<String, Video>();
+            private HashMap<String, Video> cacheAll = new HashMap<String, Video>();
+        
+            public YouTubeCacheProxy() {
+                this.youtubeService = new ThirdPartyYouTubeClass();
+            }
+        
+            @Override
+            public HashMap<String, Video> popularVideos() {
+                if (cachePopular.isEmpty()) {
+                    cachePopular = youtubeService.popularVideos();
+                } else {
+                    System.out.println("Retrieved list from cache.");
+                }
+                return cachePopular;
+            }
+        
+            @Override
+            public Video getVideo(String videoId) {
+                Video video = cacheAll.get(videoId);
+                if (video == null) {
+                    video = youtubeService.getVideo(videoId);
+                    cacheAll.put(videoId, video);
+                } else {
+                    System.out.println("Retrieved video '" + videoId + "' from cache.");
+                }
+                return video;
+            }
+        
+            public void reset() {
+                cachePopular.clear();
+                cacheAll.clear();
+            }
+        }
+        
+        public class YouTubeDownloader {
+            private ThirdPartyYouTubeLib api;
+        
+            public YouTubeDownloader(ThirdPartyYouTubeLib api) {
+                this.api = api;
+            }
+        
+            public void renderVideoPage(String videoId) {
+                Video video = api.getVideo(videoId);
+                System.out.println("\n-------------------------------");
+                System.out.println("Video page (imagine fancy HTML)");
+                System.out.println("ID: " + video.id);
+                System.out.println("Title: " + video.title);
+                System.out.println("Video: " + video.data);
+                System.out.println("-------------------------------\n");
+            }
+        
+            public void renderPopularVideos() {
+                HashMap<String, Video> list = api.popularVideos();
+                System.out.println("\n-------------------------------");
+                System.out.println("Most popular videos on YouTube (imagine fancy HTML)");
+                for (Video video : list.values()) {
+                    System.out.println("ID: " + video.id + " / Title: " + video.title);
+                }
+                System.out.println("-------------------------------\n");
+            }
+        }
+        
+        public class Demo {
+            public static void main(String[] args) {
+                YouTubeDownloader naiveDownloader = new YouTubeDownloader(new ThirdPartyYouTubeClass());
+                YouTubeDownloader smartDownloader = new YouTubeDownloader(new YouTubeCacheProxy());
+        
+                long naive = test(naiveDownloader);
+                long smart = test(smartDownloader);
+                System.out.print("Time saved by caching proxy: " + (naive - smart) + "ms");
+        
+            }
+        
+            private static long test(YouTubeDownloader downloader) {
+                long startTime = System.currentTimeMillis();
+        
+                // User behavior in our app:
+                downloader.renderPopularVideos();
+                downloader.renderVideoPage("catzzzzzzzzz");
+                downloader.renderPopularVideos();
+                downloader.renderVideoPage("dancesvideoo");
+                // Users might visit the same page quite often.
+                downloader.renderVideoPage("catzzzzzzzzz");
+                downloader.renderVideoPage("someothervid");
+        
+                long estimatedTime = System.currentTimeMillis() - startTime;
+                System.out.print("Time elapsed: " + estimatedTime + "ms\n");
+                return estimatedTime;
+            }
+        }
+        
+### Flyweight
+- Use the Flyweight Pattern when one instance of a class can be used to provide many “virtual instances.”
+- Flyweight can be recognized by a creation method that returns cached objects instead of creating new.         
 
 
-### Flyweight               
-
-
+        public class Tree {
+            private int x;
+            private int y;
+            private TreeType type;
+        
+            public Tree(int x, int y, TreeType type) {
+                this.x = x;
+                this.y = y;
+                this.type = type;
+            }
+        
+            public void draw(Graphics g) {
+                type.draw(g, x, y);
+            }
+        }
+        
+        -- Flyweight object
+        public class TreeType {
+            private String name;
+            private Color color;
+            private String otherTreeData;
+        
+            public TreeType(String name, Color color, String otherTreeData) {
+                this.name = name;
+                this.color = color;
+                this.otherTreeData = otherTreeData;
+            }
+        
+            public void draw(Graphics g, int x, int y) {
+                g.setColor(Color.BLACK);
+                g.fillRect(x - 1, y, 3, 5);
+                g.setColor(color);
+                g.fillOval(x - 5, y - 10, 10, 10);
+            }
+        }
+        
+        -- Factory holding the TreeType flyweight objects
+        public class TreeFactory {
+            static Map<String, TreeType> treeTypes = new HashMap<>();
+        
+            public static TreeType getTreeType(String name, Color color, String otherTreeData) {
+                TreeType result = treeTypes.get(name);
+                if (result == null) {
+                    result = new TreeType(name, color, otherTreeData);
+                    treeTypes.put(name, result);
+                }
+                return result;
+            }
+        }
+        
+        public class Forest extends JFrame {
+            private List<Tree> trees = new ArrayList<>();
+        
+            public void plantTree(int x, int y, String name, Color color, String otherTreeData) {
+                TreeType type = TreeFactory.getTreeType(name, color, otherTreeData);
+                Tree tree = new Tree(x, y, type);
+                trees.add(tree);
+            }
+        
+            @Override
+            public void paint(Graphics graphics) {
+                for (Tree tree : trees) {
+                    tree.draw(graphics);
+                }
+            }
+        }
+        
+        public class Demo {
+            static int CANVAS_SIZE = 500;
+            static int TREES_TO_DRAW = 1000000;
+            static int TREE_TYPES = 2;
+        
+            public static void main(String[] args) {
+                Forest forest = new Forest();
+                for (int i = 0; i < Math.floor(TREES_TO_DRAW / TREE_TYPES); i++) {
+                    forest.plantTree(random(0, CANVAS_SIZE), random(0, CANVAS_SIZE),
+                            "Summer Oak", Color.GREEN, "Oak texture stub");
+                    forest.plantTree(random(0, CANVAS_SIZE), random(0, CANVAS_SIZE),
+                            "Autumn Oak", Color.ORANGE, "Autumn Oak texture stub");
+                }
+                forest.setSize(CANVAS_SIZE, CANVAS_SIZE);
+                forest.setVisible(true);
+        
+                System.out.println(TREES_TO_DRAW + " trees drawn");
+                System.out.println("---------------------");
+                System.out.println("Memory usage:");
+                System.out.println("Tree size (8 bytes) * " + TREES_TO_DRAW);
+                System.out.println("+ TreeTypes size (~30 bytes) * " + TREE_TYPES + "");
+                System.out.println("---------------------");
+                System.out.println("Total: " + ((TREES_TO_DRAW * 8 + TREE_TYPES * 30) / 1024 / 1024) +
+                        "MB (instead of " + ((TREES_TO_DRAW * 38) / 1024 / 1024) + "MB)");
+            }
+        
+            private static int random(int min, int max) {
+                return min + (int) (Math.random() * ((max - min) + 1));
+            }
+        }
+    
 ### Facade              
 - It provides a simplified (but limited) interface to a complex system of classes, library or framework.            
 - It provides a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use. It alters an interface, but for a different reason: to simplify the interface.                
@@ -640,13 +1115,143 @@
             public static void main(String[] args) {
                 VideoConversionFacade converter = new VideoConversionFacade();
                 File mp4Video = converter.convertVideo("youtubevideo.ogg", "mp4");
-                // ...
             }
         }
         
         
-### Bridge              
-
+### Bridge     
+- Use the Bridge Pattern to vary not only your implementations, but also your abstractions.         
+    
+        
+        public abstract class TV {
+        	public abstract void on();
+        	public abstract void off();
+        	public abstract void tuneChannel(int channel);
+        	public abstract int getChannel(); 
+        }
+        
+        public class Sony extends TV {
+        	int station = 0;
+        	public void on() {
+        		System.out.println("Turning on the Sony TV");
+        	}
+        	public void off() {
+        		System.out.println("Turning off the Sony TV");
+        	}
+        	public void tuneChannel(int channel) {
+        		this.station = channel;
+        		System.out.println("Set the Sony TV station to " + this.station);
+        	}
+        	public int getChannel() {
+        		return station;
+        	}
+        }
+        
+        public class LG extends TV {
+        	int channel = 1;
+        	public void on() {
+        		System.out.println("Turning on the LG TV");
+        	}
+        	public void off() {
+        		System.out.println("Turning off the LG TV");
+        	}
+        	public void tuneChannel(int channel) {
+        		this.channel = channel;
+        		System.out.println("Set the LG TV Channel to " + this.channel);
+        	}
+        	public int getChannel() {
+        		return channel;
+        	}
+        }
+                
+        public class TVFactory {
+        	public TV getTV(String type) throws Exception {
+        		if (type.equals("LG")) {
+        			return new LG();
+        		} else if (type.equals("Sony")) {
+        			return new Sony();
+        		} else {
+        			throw new Exception("Invalid TV Type");
+        		}
+        	}
+        }
+        
+        //RemoteControl abstract class, acts as a bridge between Remotes and different types of TVs
+        public abstract class RemoteControl {
+        	TV tv;
+        	TVFactory tvFactory;
+        	public RemoteControl(TVFactory tvFactory) {
+        		this.tvFactory = tvFactory;
+        	}
+        	public void on() {
+        		this.tv.on();
+        	}
+        	public void off() {
+        		this.tv.off();
+        	}
+        	public void setChannel(int channel) {
+        		tv.tuneChannel(channel);
+        	}
+        	public int getChannel() {
+        		return tv.getChannel();
+        	}
+        	public void setTV(String type) {
+        		try {
+        			tv = tvFactory.getTV(type);
+        		} catch (Exception e) {
+        			System.out.println(e);
+        		}
+        	}
+        }
+        
+        public class SpecialRemote extends RemoteControl {
+        	public SpecialRemote(TVFactory tvFactory) {
+        		super(tvFactory);
+        	}
+        	public void up() {
+        		int channel = this.getChannel();
+        		this.setChannel(channel+1);
+        	}
+        	public void down() {
+        		int channel = this.getChannel();
+        		this.setChannel(channel-1);
+        	}
+        }
+        
+        public class GenericRemote extends RemoteControl {
+        	public GenericRemote(TVFactory tvFactory) {
+        		super(tvFactory);
+        	}
+        	public void nextChannel() {
+        		int channel = this.getChannel();
+        		this.setChannel(channel+1);
+        	}
+        	public void prevChannel() {
+        		int channel = this.getChannel();
+        		this.setChannel(channel-1);
+        	}
+        }
+        
+        public class Client {
+        	public static void main(String[] args) {
+        		TVFactory tvFactory = new TVFactory();
+        		SpecialRemote remoteSony = new SpecialRemote(tvFactory);
+        		System.out.println("Connect your remote to the TV");
+        		remoteSony.setTV("Sony");
+        		remoteSony.on();
+        		remoteSony.up();
+        		remoteSony.down();
+        		remoteSony.off();
+        		
+        		GenericRemote remoteLG = new GenericRemote(tvFactory);
+        		System.out.println("Connect your remote to the TV");
+        		remoteLG.setTV("LG");
+        		remoteLG.on();
+        		remoteLG.nextChannel();
+        		remoteLG.prevChannel();
+        		remoteLG.off();
+        	}
+        }
 
 ### Decorator               
 - Using decorators you can wrap objects countless number of times since both target objects and decorators follow the same interface. 
