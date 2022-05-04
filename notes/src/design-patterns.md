@@ -459,9 +459,87 @@
 
 
 ### Adapter             
+- Converts the interface of a class into another interface the clients expect.     
+- Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.   
+- There are actually two kinds of adapters: **object adapters** and **class adapters**. The only difference is that with class adapter we subclass the Target and the Adaptee, while with object adapter we use composition to pass requests to an Adaptee.
 
+
+        --------------------------Duck
+        public interface IDuck {
+            void quack();
+            void fly();
+        }
+        
+        public class MallardDuck implements IDuck {
+            public void quack() {
+                System.out.println("Mallard's quack!!");
+            }
+            public void fly() {
+                System.out.println("Mallard soaring in the sky!!");
+            }
+        }
+
+        --------------------------Penguin
+        public interface IPenguin {
+            void gak();
+            void noFly();
+        }
+
+        public class EmperorPenguin implements IPenguin{
+            public void gak() {
+                System.out.println("Emperor Penguin's gak!!");
+            }
+            public void noFly() {
+                System.out.println("Emperor Penguins can't fly!! Just flapping his wings desperately.");
+            }
+        }
+        
+        --------------------------PenguinAdapter
+        public class PenguinAdapter implements IDuck {
+            IPenguin penguin;
+            public PenguinAdapter(IPenguin penguin) {
+                this.penguin = penguin;
+            }
+        
+            public void quack() {
+                penguin.gak();
+            }
+        
+            public void fly() {
+                penguin.noFly();
+            }
+        }
+
+        public class Runner {
+            public Runner() {
+            }
+        
+            public void test(IDuck subject) {
+                subject.quack();
+                subject.fly();
+            }
+        
+            public static void main(String[] args) {
+                Runner runner = new Runner();
+                System.out.println("--------Testing the Mallard duck----------");
+                IDuck duck = new MallardDuck();
+                runner.test(duck);
+        
+                System.out.println("--------Testing the Wild turkey----------");
+                IPenguin penguin = new EmperorPenguin();
+                IDuck penguinAdapter = new PenguinAdapter(penguin);
+                runner.test(penguinAdapter);
+            }
+        }
 
 ### Composite               
+- It allows you to compose objects into tree structures to represent part-whole hierarchies.    
+- Composite lets clients treat individual objects and compositions of objects uniformly.   
+- The Composite Pattern allows us to build structures of objects in the form of trees that contain both compositions of objects and individual objects as nodes. 
+- Using a composite structure, we can apply the same operations over both composites and individual objects. In other words, in most cases we can ignore the differences between compositions of objects and individual objects.            
+
+
+        
 
 
 ### Proxy               
