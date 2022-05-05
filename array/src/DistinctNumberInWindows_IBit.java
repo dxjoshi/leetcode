@@ -40,6 +40,32 @@ public class DistinctNumberInWindows_IBit {
         return res;
     }
 
+    /*Fastest Correct solution*/
+    public int[] dNums3(int[] A, int B) {
+        if (B>A.length) return new int[0];
+
+        int[] result = new int[A.length-B+1];
+
+        Map<Integer, Integer> count = new HashMap<Integer, Integer>();
+        for (int i=0; i<A.length; i++) {
+
+            Integer c1 = count.remove(A[i]);
+            count.put(A[i], c1 == null ? 1 : c1+1);
+            if (i<B-1) {
+                continue;
+            }
+
+            if (i>B-1) {
+                Integer c = count.remove(A[i-B]);
+                if (c != null && c > 1) count.put(A[i-B], c-1);
+            }
+
+            result[i-(B-1)] = count.size();
+        }
+
+        return result;
+    }
+
     /*Correct solution*/
     public int[] dNums1(int[] A, int B) {
         if (B > A.length) return null;
