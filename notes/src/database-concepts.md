@@ -50,14 +50,13 @@
       
             /<Database>/<Table>/<Id>/<Type1>/<SubId1>                  
             /<Database>/<Table>/<Id>/<Type1>/<SubId1>/<Type2>/<SubId2>                    
-            /cpm/customers/15                   
-            /cpm/customers/15/agreements/65                 
-            /cpm/customers/15/agreements/65/products/34                 
-            /cil/customers_location/15
+      
       - Value corresponding to a key can contains some data(can be encoded like using Avro serialization) and a schema id. The schema id represents the schema used to encode the data, it is mandatory - it cannot be null.        
       - CQL is an abstraction layer in Cassandra which presents data arranged tables, with support for SQL-like queries.        
-      - However, internally in Cassandra data is arranged into a set of Column Families (CF). Column Families have many similarities with tables in an SQL database. 
-      - For example, a CF have a Row Key (similar to primary index) as well as a set of named columns. The number of columns and their names are dynamic, and different rows can have different columns. Column families are then stored in a Key Space (similar to a DB schema). Key Spaces are important to Cassandra when distributing data internally in the Cassandra cluster. Data Segment distribution in CIL is not necessarily aligned with how Key Spaces are distributed in Cassandra. These concepts are similar, but not related to one another. Visit the official Cassandra site for more details.                  
+      - However, internally in Cassandra data is arranged into a set of Column Families (CF). Column Families have many similarities with tables in an SQL database.            
+      - For example, a CF have a Row Key (similar to primary index) as well as a set of named columns. The number of columns and their names are dynamic, and different rows can have different columns.            
+      - Column families are then stored in a Key Space (similar to a DB schema). Key Spaces are important to Cassandra when distributing data internally in the Cassandra cluster.          
+      - Data Segment distribution in CIL is not necessarily aligned with how Key Spaces are distributed in Cassandra. These concepts are similar, but not related to one another. Visit the official Cassandra site for more details.                              
       - Before CIL store an entity into Cassandra, the Entity Key is broken down into a few specific parts. Consider the following Entity Key:                  
                           
               /cpm/customers/56                   
