@@ -44,7 +44,60 @@
       - **Hinted Handoff:** If a node in a cluster goes down, its coordinator node tries to preserve the data in the form of hints. When the failed node is brought online, the coordinator node hands off the hints to aid in the repair.          
         This, however, can prove to be a burden for the coordinator node and overload it. As a result, you will see a loss of data replicas and refusal of writes from the coordinator node.            
       - While scanning data, Cassandra handles itself well if the primary key is known, but suffers severely if it is not. This is because it has to scan all its nodes in the cluster, resulting in high read time penalties.          
-                
+     
+  - **Cassandra Keys**
+      - More fields can be added in type-ID pairs, Examples of valid keys are:
+      
+            /<Database>/<Table>/<Id>/<Type1>/<SubId1>                  
+            /<Database>/<Table>/<Id>/<Type1>/<SubId1>/<Type2>/<SubId2>                    
+            /cpm/customers/15                   
+            /cpm/customers/15/agreements/65                 
+            /cpm/customers/15/agreements/65/products/34                 
+            /cil/customers_location/15
+      - Value corresponding to a key can contains some data(can be encoded like using Avro serialization) and a schema id. The schema id represents the schema used to encode the data, it is mandatory - it cannot be null.        
+      - CQL is an abstraction layer in Cassandra which presents data arranged tables, with support for SQL-like queries.        
+      - However, internally in Cassandra data is arranged into a set of Column Families (CF). Column Families have many similarities with tables in an SQL database. 
+      - For example, a CF have a Row Key (similar to primary index) as well as a set of named columns. The number of columns and their names are dynamic, and different rows can have different columns. Column families are then stored in a Key Space (similar to a DB schema). Key Spaces are important to Cassandra when distributing data internally in the Cassandra cluster. Data Segment distribution in CIL is not necessarily aligned with how Key Spaces are distributed in Cassandra. These concepts are similar, but not related to one another. Visit the official Cassandra site for more details.                  
+      - Before CIL store an entity into Cassandra, the Entity Key is broken down into a few specific parts. Consider the following Entity Key:                  
+                          
+              /cpm/customers/56                   
+              /cpm/customers/56/agreements/23                 
+              /cpm/customers/56/agreements/23/products/12                 
+              /cpm/customers/56/agreements/23/products/17                 
+              /cpm/customers/56/agreements/24                 
+              /cpm/customers/56/agreements/24/products/19
+              /cpm/customers/78                   
+              /cpm/customers/78/agreements/28                 
+              /cpm/customers/78/agreements/28/products/15     
+              /cha/customers/78     
+              /cil/customers_location/78                  
+                                     
+      - These would be mapped into Cassandra as follows (the data is not shown here):                   
+
+              *Note that different rows in Cassandra can have different column names, and a varying number of columns per row.
+              *As the Entity Key is associated with another Database like cha and cil, it will end up in another Key Space:                 
+                 
+              Key Space: cpm                  
+                Column Family: customers                  
+                  56 -> /, agreements/23, agreements/23/products/12, agreements/23/products/17, agreements/24, agreements/24/products/19                  
+                  78 -> /, agreements/28, agreements/28/products/15                   
+                                  
+              Key Space: cha                 
+                Column Family: customers                  
+                  78 -> /                 
+                                  
+              Key Space: cil                  
+                Column Family: customers_location                 
+                  78 -> /                  
+
+      - Several things can be observed here. 
+        - The Key Space in Cassandra has the same name as the first field in the Entity Key. 
+        - Also the Column Family used has its name derived from the second field in the Entity Key. 
+        - The third field in the Entity Key is used as the Row Key in Cassandra.                    
+        - As all these Entity Keys have the same Entity Base Key, that means that all Entity Keys will be mapped to the same Row Key. 
+        - Once the three first fields in the Entity Key have been mapped to Key Space, Column Family and Row Key, the remainder of the Entity Key is simply used as the name of the column in Cassandra. 
+        - There is one special case though. The first Entity Key which have only three sections, will be mapped into a column named "/".                   
+               
 ### Mongo DB            
   - **Advantages**          
       - A schema-less database and stores data as JSON-like documents (binary JSON).            
