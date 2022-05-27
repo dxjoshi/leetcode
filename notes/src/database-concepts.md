@@ -56,27 +56,27 @@
       - However, internally in Cassandra data is arranged into a set of Column Families (CF). Column Families have many similarities with tables in an SQL database.            
       - For example, a CF have a Row Key (similar to primary index) as well as a set of named columns. The number of columns and their names are dynamic, and different rows can have different columns.            
       - Column families are then stored in a Key Space (similar to a DB schema). Key Spaces are important to Cassandra when distributing data internally in the Cassandra cluster.          
-      - Data Segment distribution in CIL is not necessarily aligned with how Key Spaces are distributed in Cassandra. These concepts are similar, but not related to one another. Visit the official Cassandra site for more details.                              
-      - Before CIL store an entity into Cassandra, the Entity Key is broken down into a few specific parts. Consider the following Entity Key:                  
+      - Data Segment distribution in service3 is not necessarily aligned with how Key Spaces are distributed in Cassandra. These concepts are similar, but not related to one another. Visit the official Cassandra site for more details.                              
+      - Before service3 store an entity into Cassandra, the Entity Key is broken down into a few specific parts. Consider the following Entity Key:                  
                           
-              /cpm/customers/56                   
-              /cpm/customers/56/agreements/23                 
-              /cpm/customers/56/agreements/23/products/12                 
-              /cpm/customers/56/agreements/23/products/17                 
-              /cpm/customers/56/agreements/24                 
-              /cpm/customers/56/agreements/24/products/19
-              /cpm/customers/78                   
-              /cpm/customers/78/agreements/28                 
-              /cpm/customers/78/agreements/28/products/15     
-              /cha/customers/78     
-              /cil/customers_location/78                  
+              /service1/customers/56                   
+              /service1/customers/56/agreements/23                 
+              /service1/customers/56/agreements/23/products/12                 
+              /service1/customers/56/agreements/23/products/17                 
+              /service1/customers/56/agreements/24                 
+              /service1/customers/56/agreements/24/products/19
+              /service1/customers/78                   
+              /service1/customers/78/agreements/28                 
+              /service1/customers/78/agreements/28/products/15     
+              /service2/customers/78     
+              /service3/customers_location/78                  
                                      
       - These would be mapped into Cassandra as follows (the data is not shown here):                   
 
               *Note that different rows in Cassandra can have different column names, and a varying number of columns per row.
-              *As the Entity Key is associated with another Database like cha and cil, it will end up in another Key Space:                 
+              *As the Entity Key is associated with another Database like cha and service3, it will end up in another Key Space:                 
                  
-              Key Space: cpm                  
+              Key Space: service1                  
                 Column Family: customers                  
                   56 -> /, agreements/23, agreements/23/products/12, agreements/23/products/17, agreements/24, agreements/24/products/19                  
                   78 -> /, agreements/28, agreements/28/products/15                   
@@ -85,7 +85,7 @@
                 Column Family: customers                  
                   78 -> /                 
                                   
-              Key Space: cil                  
+              Key Space: service3                  
                 Column Family: customers_location                 
                   78 -> /                  
 
