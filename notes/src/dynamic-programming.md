@@ -1,5 +1,24 @@
 ## Popular Dynamic Programming questions' solution
 
+|||
+|---|---|
+|[Climbing Stairs](#climbing-stairs)|[Maximum Product Subarray](#maximum-product-subarray)|
+|[Min Cost Climbing Stairs](#min-cost-climbing-stairs)|[Longest Increasing Subsequence](#longest-increasing-subsequence)|
+|[House Robber](#house-robber)|[Number of Longest Increasing Subsequence](#number-of-longest-increasing-subsequence)|
+|[House Robber II](#house-robber-II)|[Longest Common Subsequence](#longest-common-subsequence)|
+|[Delete and Earn](#delete-and-earn)|[Ones and Zeroes](#ones-and-zeroes)|
+|[Triangle](#triangle)|[Edit Distance](#edit-distance)|
+|[01 Matrix](#01-matrix)|[Maximum sum increasing subsequence](#maximum-sum-increasing-subsequence)|
+|[Integer Break](#integer-break)|[Matrix Chain Multiplication](#matrix-chain-multiplication)|
+|[Maximum Sum Circular Subarray](#maximum-sum-circular-subarray)|[Minimum Path Sum](#minimum-path-sum)|
+|[Maximum Length of Subarray With Positive Product](#maximum-length-of-subarray-with-positive-product)|[Coin Change](#coin-change)|
+|[Best Sightseeing Pair](#Best-Sightseeing-Pair)|[Partition Equal Subset Sum](#partition-equal-subset-sum)|
+|[Best Time to Buy and Sell Stock](#best-time-to-buy-and-sell-stock)|[Minimum Cost to Cut a Stick](#minimum-cost-to-cut-a-stick)|
+|[Best Time to Buy and Sell Stock II](#best-time-to-buy-and-sell-stock-ii)|[Egg Dropping Puzzle](#egg-dropping-puzzle)|
+|[Best Time to Buy and Sell Stock with Cooldown](#best-time-to-buy-and-sell-stock-with-cooldown)|[Word Break](#word-break)|
+|[Best Time to Buy and Sell Stock with Transaction Fee](#best-time-to-buy-and-sell-stock-with-transaction-fee)|[Palindromic patitioning](#palindromic-patitioning)|
+|[Longest Repeated Subsequence](#longest-repeated-subsequence)| 
+
 ### Questions    
 - [Climbing Stairs](#climbing-stairs)
 - [Min Cost Climbing Stairs](#min-cost-climbing-stairs)  
@@ -11,7 +30,7 @@
 - [Integer Break](#integer-break)  
 - [Maximum Sum Circular Subarray](#maximum-sum-circular-subarray)       
 - [Maximum Length of Subarray With Positive Product](#maximum-length-of-subarray-with-positive-product)   
-- [Best Sightseeing Pair](#Best Sightseeing Pair)    
+- [Best Sightseeing Pair](#Best-Sightseeing-Pair)    
 - [Best Time to Buy and Sell Stock](#best-time-to-buy-and-sell-stock)           
 - [Best Time to Buy and Sell Stock II](#best-time-to-buy-and-sell-stock-ii)               
 - [Best Time to Buy and Sell Stock with Cooldown](#best-time-to-buy-and-sell-stock-with-cooldown)
