@@ -16,8 +16,10 @@
 - [Near Cache Hybrid - Video](https://www.youtube.com/watch?v=uBqysgyyquk&list=PLdsOZAx8I5umhnn5LLTNJbFgwA3xbycar&index=58)    
 - [Choosing Right Caching Topology - Video](https://www.youtube.com/watch?v=vo8-HZjXjvc&list=PLdsOZAx8I5umhnn5LLTNJbFgwA3xbycar&index=57)
 - [Kafka vs Messaging Queues - Video](https://www.youtube.com/watch?v=lwMjjTT1Q-Q&list=PLdsOZAx8I5umhnn5LLTNJbFgwA3xbycar&index=135)                  
+- [Kafka Error Handling](https://blogs.perficient.com/2021/02/15/kafka-consumer-error-handling-retry-and-recovery/)         
 - [Bloom Filter](https://medium.com/system-design-blog/bloom-filter-a-probabilistic-data-structure-12e4e5cf0638)            
 - [Introduction to architecting systems for scale](https://lethain.com/introduction-to-architecting-systems-for-scale/)         
+- [Push based message queues](https://livebook.manning.com/book/activemq-in-action/chapter-13/80)                   
 
 ### Topics          
 - [System Design Template](#system-design-template)             
