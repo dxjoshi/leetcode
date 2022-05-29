@@ -19,39 +19,6 @@
 |[Best Time to Buy and Sell Stock with Transaction Fee](#best-time-to-buy-and-sell-stock-with-transaction-fee)|[Palindromic patitioning](#palindromic-patitioning)|
 |[Longest Repeated Subsequence](#longest-repeated-subsequence)| 
 
-### Questions    
-- [Climbing Stairs](#climbing-stairs)
-- [Min Cost Climbing Stairs](#min-cost-climbing-stairs)  
-- [House Robber](#house-robber)             
-- [House Robber II](#house-robber-II)           
-- [Delete and Earn](#delete-and-earn)     
-- [Triangle](#triangle)  
-- [01 Matrix](#01-matrix)     
-- [Integer Break](#integer-break)  
-- [Maximum Sum Circular Subarray](#maximum-sum-circular-subarray)       
-- [Maximum Length of Subarray With Positive Product](#maximum-length-of-subarray-with-positive-product)   
-- [Best Sightseeing Pair](#Best-Sightseeing-Pair)    
-- [Best Time to Buy and Sell Stock](#best-time-to-buy-and-sell-stock)           
-- [Best Time to Buy and Sell Stock II](#best-time-to-buy-and-sell-stock-ii)               
-- [Best Time to Buy and Sell Stock with Cooldown](#best-time-to-buy-and-sell-stock-with-cooldown)
-- [Best Time to Buy and Sell Stock with Transaction Fee](#best-time-to-buy-and-sell-stock-with-transaction-fee)           
-- [Longest Repeated Subsequence](#longest-repeated-subsequence)      
-- [Maximum Product Subarray](#maximum-product-subarray)        
-- [Longest Increasing Subsequence](#longest-increasing-subsequence)             
-- [Number of Longest Increasing Subsequence](#number-of-longest-increasing-subsequence)         
-- [Longest Common Subsequence](#longest-common-subsequence)         
-- [Ones and Zeroes](#ones-and-zeroes)      
-- [Edit Distance](#edit-distance)        
-- [Maximum sum increasing subsequence](#maximum-sum-increasing-subsequence)         
-- [Matrix Chain Multiplication](#matrix-chain-multiplication)           
-- [Minimum Path Sum](#minimum-path-sum)     
-- [Coin Change](#coin-change)
-- [Partition Equal Subset Sum](#partition-equal-subset-sum)     
-- [Minimum Cost to Cut a Stick](#minimum-cost-to-cut-a-stick)           
-- [Egg Dropping Puzzle](#egg-dropping-puzzle)       
-- [Word Break](#word-break)         
-- [Palindromic patitioning](#palindromic-patitioning)           
-
 ### Climbing Stairs     
 - [https://leetcode.com/problems/climbing-stairs/](https://leetcode.com/problems/climbing-stairs/)      
 
