@@ -17,6 +17,7 @@ public class MatrixMedian_IBit {
 
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
+        //Find min and max ele in the matrix
         for(int i=0; i<n; i++){
             max = Math.max(max, A.get(i).get(m-1));
             min = Math.min(min, A.get(i).get(0));
@@ -24,6 +25,7 @@ public class MatrixMedian_IBit {
 
         int l = min;
         int h = max;
+        // # elements we want to count using binSearch
         int req= ((n*m))/2;
         int ans =0;
         while(l<=h){
@@ -31,9 +33,11 @@ public class MatrixMedian_IBit {
             int mid = l + (h-l)/2;
 
             for(int i=0; i<n; i++){
+                // count #elements less than mid in each row and add all to get the count of such elements in the matrix
                 count+= binarySearch(A.get(i), mid);
             }
 
+            // if count < desired count, we update low to increase the mid value ELSE update high and save mid as probable answer
             if(count<req+1){
                 l=mid+1;
             } else{
@@ -41,9 +45,7 @@ public class MatrixMedian_IBit {
                 h=mid-1;
             }
         }
-
         return ans;
-
     }
 
     public int binarySearch(ArrayList<Integer> A, int n){
