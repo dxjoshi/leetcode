@@ -1,6 +1,3 @@
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
 import java.util.Stack;
 
 /*
@@ -72,20 +69,12 @@ public class FindCelebrity_CodingNinja {
         return celebrity;
     }
 
-    public static int findCelebrityTwoPointer(int n) {
+    public static int findCelebrity(int n) {
         // Two pointers pointing at start and end of search space.
         int p = 0, q = n - 1;
-
-        // Finding celebrity.
         while(p < q) {
-            if(Runner.knows(p, q)) {
-                // This means p cannot be celebrity.
-                p++;
-            }
-            else {
-                // This means q cannot be celebrity.
-                q--;
-            }
+            if(Runner.knows(p, q)) p++;
+            else q--;
         }
 
         int celebrity = p;
@@ -107,13 +96,9 @@ public class FindCelebrity_CodingNinja {
             }
         }
 
-        if(knowAny || !knownToAll) {
-            // If verificatin failed, then it means there is no celebrity at the party.
-            celebrity = -1;
-        }
-
+        if(knowAny || !knownToAll)  celebrity = -1;
         return celebrity;
     }
-
-
 }
+
+
