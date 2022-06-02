@@ -3,18 +3,18 @@
 ### Index
 |Custom Java Implementations|Custom Data Structures Implementations|
 |---|---|
+|[Custom Connection Pool](#custom-connection-pool)|[LRU Cache](#lru-cache)|
+|[Custom ThreadPool](#custom-threadpool)|[HashMap](#hashmap)|
+|[Custom ThreadPoolExecutor](#custom-threadpoolexecutor)|[LFU Cache](#lfu-cache)|
+|[Custom CountDownLatch](#custom-countdownlatch)|[Min Stack](#min-stack)|
+|[Custom CyclicBarrier](#custom-cyclicbarrier)|[Stack Using Queues](#stack-using-queues)|
+|[Custom Semaphore](#custom-semaphore)|[Queue Using Stack](#queue-using-stack)|
+|[Custom ReentrantLock](#custom-reentrantlock)|[Custom ArrayList](#custom-arraylist)|
+|[Custom ReentrantReadWriteLock](#custom-reentrantreadwritelock)|[Custom BlockingQueue](#custom-blockingqueue)|
+|[Producer Consumer BlockingQueue](#producer-consumer-blockingqueue)|[Custom Dequeue](#custom-dequeue)|
+|[Producer Consumer WaitNotify](#producer-consumer-waitnotify)|[Custom HashSet](#custom-hashset)|
+||[Custom LinkedHashMap](#custom-linkedhashmap)|
 
-
-[Custom Connection Pool]()
-[Custom ThreadPool]()
-[Custom ThreadPoolExecutor]()
-[Custom CountDownLatch]()
-[Custom CyclicBarrier]()
-[Custom Semaphore]()
-[Custom ReentrantLock]()
-[Custom ReentrantReadWriteLock]()
-[Producer Consumer BlockingQueue]()
-[Producer Consumer WaitNotify]()
 
 ### Source Code Links
 
@@ -58,8 +58,33 @@
 - [Custom HashSet](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomHashSet.java)                
 - [Custom LinkedHashMap](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomLinkedHashMap.java)                          
 - [Custom LinkedHashSet](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomLinkedHashSet.java)                          
+     
+     
+### Custom Connection Pool              
+### Custom ThreadPool               
+### Custom ThreadPoolExecutor               
+### Custom CountDownLatch               
+### Custom CyclicBarrier                
+### Custom Semaphore                
+### Custom ReentrantLock                
+### Custom ReentrantReadWriteLock               
+### Producer Consumer BlockingQueue             
+### Producer Consumer WaitNotify                
+                    
+### LRU Cache               
+### HashMap             
+### LFU Cache               
+### Min Stack               
+### Stack Using Queues              
+### Queue Using Stack               
+### Custom ArrayList                
+### Custom BlockingQueue                
+### Custom Dequeue              
+### Custom HashSet              
+### Custom LinkedHashMap                
+### Custom LinkedHashSet                
        
-### Solutions     
+### Custom Connection Pool          
 
 - [Custom Connection Pool](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/customConnectionPool/BasicConnectionPool.java)               
 
@@ -160,6 +185,8 @@
                 connectionPool.clear();
             }
         }                            
+
+### Custom ThreadPool               
 
 - [Custom ThreadPool](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomThreadPool.java)                                            
 
