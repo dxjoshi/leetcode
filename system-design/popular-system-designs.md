@@ -254,8 +254,8 @@
         - Between internal platform layer and database.
 
 ### Caching    
-[Caching Topologies](https://drive.google.com/file/d/1xzNyPaBMYPcfEpZdbP91DQEnn5A70fkC/view?usp=sharing)                   
-![Caching Topologies](https://drive.google.com/file/d/1xzNyPaBMYPcfEpZdbP91DQEnn5A70fkC/view?usp=sharing)   
+[Caching Topologies](https://github.com/dxjoshi/leetcode/blob/fff88a9663bc38e8fd5ea1ecf763bc03a7ad8b09/system-design/resources/all-designs/caching-topologies.png)                             
+![Caching Topologies](https://github.com/dxjoshi/leetcode/blob/fff88a9663bc38e8fd5ea1ecf763bc03a7ad8b09/system-design/resources/all-designs/caching-topologies.png)            
            
     - Caches take advantage of the locality of reference principle: recently requested data is likely to be requested again.    
     - Types of Caches:  
