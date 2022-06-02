@@ -60,11 +60,6 @@
 - [Custom LinkedHashSet](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomLinkedHashSet.java)                          
      
      
-### Custom Connection Pool              
-### Custom ThreadPool               
-### Custom ThreadPoolExecutor               
-### Custom CountDownLatch               
-### Custom CyclicBarrier                
 ### Custom Semaphore                
 ### Custom ReentrantLock                
 ### Custom ReentrantReadWriteLock               
@@ -85,7 +80,6 @@
 ### Custom LinkedHashSet                
        
 ### Custom Connection Pool          
-
 - [Custom Connection Pool](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/customConnectionPool/BasicConnectionPool.java)               
 
 
@@ -187,7 +181,6 @@
         }                            
 
 ### Custom ThreadPool               
-
 - [Custom ThreadPool](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomThreadPool.java)                                            
 
 
@@ -274,7 +267,8 @@
                 threadPool.shutdown();
             }
         }
-        
+    
+### Custom ThreadPoolExecutor               
 - [Custom ThreadPoolExecutor](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomThreadPoolExecutor.java)                            
 
 
@@ -330,6 +324,7 @@
             }
         }
         
+### Custom CountDownLatch               
 - [Custom CountDownLatch](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CountdownLatchCustom.java)                                    
 
 
@@ -351,6 +346,7 @@
         
         }
 
+### Custom CyclicBarrier                
 - [Custom CyclicBarrier](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CyclicBarrierCustom.java)                                      
 
 
