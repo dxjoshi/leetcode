@@ -104,7 +104,6 @@
 ![Youtube](https://github.com/dxjoshi/leetcode/blob/4c5e7ce6041d064b5f82682d677aaccb13255c65/system-design/resources/youtube-exponent.png)      
         
 
-
 ### System Design Template 
 - [Topcat Article](https://leetcode.com/topcat/)
 
@@ -255,6 +254,9 @@
         - Between internal platform layer and database.
 
 ### Caching    
+[Caching Topologies](https://drive.google.com/file/d/1xzNyPaBMYPcfEpZdbP91DQEnn5A70fkC/view?usp=sharing)                   
+![Caching Topologies](https://drive.google.com/file/d/1xzNyPaBMYPcfEpZdbP91DQEnn5A70fkC/view?usp=sharing)   
+           
     - Caches take advantage of the locality of reference principle: recently requested data is likely to be requested again.    
     - Types of Caches:  
         - **Write-through cache:** Data is written into the cache and the corresponding database simultaneously. The cached data allows for fast retrieval and, since the same data gets written in the permanent storage, we will have complete data consistency between the cache and the storage. Also, this scheme ensures that nothing will get lost in case of a crash, power failure, or other system disruptions.   
@@ -264,7 +266,7 @@
         - CDNs are a kind of cache that comes into play for sites serving large amounts of static media. 
         - In a typical CDN setup, a request will first ask the CDN for a piece of static media; the CDN will serve that content if it has it locally available. 
         - If it isn’t available, the CDN will query the back-end servers for the file, cache it locally, and serve it to the requesting user.  
-      
+          
 ### Data Partitioning  
     - Data partitioning is a technique to break a big database (DB) into many smaller parts.    
     - **Horizontal Partitioning(Sharding):** In this scheme, we put different rows into different tables. eg. if we store different places in a table, we can decide that locations with ZIP codes less than 10000 are stored in one table and places with ZIP codes greater than 10000 are stored in a separate table.      
