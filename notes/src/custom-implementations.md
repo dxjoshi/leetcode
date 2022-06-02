@@ -1,6 +1,6 @@
 ## Popular Java LLD questions solution
 
-### Index
+### Index           
 |Custom Java Implementations|Custom Data Structures Implementations|
 |---|---|
 |[Custom Connection Pool](#custom-connection-pool)|[LRU Cache](#lru-cache)|
@@ -16,8 +16,7 @@
 ||[Custom LinkedHashMap](#custom-linkedhashmap)|
 
 
-### Source Code Links
-
+### Source Code Links           
 |Custom Java Implementations|Custom Data Structures Implementations|
 |---|---|
 |[Custom Connection Pool](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/customConnectionPool/BasicConnectionPool.java)|[LRU Cache](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/data-structures/src/LRUCache146_V2.java)|
@@ -32,53 +31,6 @@
 |[Producer Consumer WaitNotify](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/ProducerConsumerWaitNotify.java)|[Custom HashSet](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomHashSet.java)|
 ||[Custom LinkedHashMap](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomLinkedHashMap.java)|
 
-### Link to Custom Java Implementations              
-- [Custom Connection Pool](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/customConnectionPool/BasicConnectionPool.java)                              
-- [Custom ThreadPool](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomThreadPool.java)             
-- [Custom ThreadPoolExecutor](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomThreadPoolExecutor.java)             
-- [Custom CountDownLatch](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CountdownLatchCustom.java)             
-- [Custom CyclicBarrier](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CyclicBarrierCustom.java)              
-- [Custom Semaphore](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/SemaphoreCustom.java)                  
-- [Custom ReentrantLock](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/ReentrantLockCustom.java)              
-- [Custom ReentrantReadWriteLock](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/ReentrantReadWriteLock.java)                     
-- [Producer Consumer BlockingQueue](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/ProducerConsumerBlockingQueue.java)               
-- [Producer Consumer WaitNotify](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/ProducerConsumerWaitNotify.java)                  
-
-               
-### Link to Custom Data Structures Implementations        
-- [LRU Cache](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/data-structures/src/LRUCache146_V2.java)                         
-- [HashMap](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/data-structures/src/DesignHashMap706.java)                           
-- [LFU Cache](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/data-structures/src/LFUCache460_V2.java)         
-- [Min Stack](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/data-structures/src/MinStack155.java)         
-- [Stack Using Queues](https://github.com/dxjoshi/leetcode/blob/9228b4378d7d70c8b397c3b4af38aab5e3b2dd75/data-structures/src/StackUsingQueues_225.java)            
-- [Queue Using Stack](https://github.com/dxjoshi/leetcode/blob/9228b4378d7d70c8b397c3b4af38aab5e3b2dd75/data-structures/src/QueueUsingStack_232.java)                
-- [Custom ArrayList](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/ArrayListCustom.java)                          
-- [Custom BlockingQueue](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/BlockingQueueCustomTest.java)          
-- [Custom Dequeue](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomDequeue.java)            
-- [Custom HashSet](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomHashSet.java)                
-- [Custom LinkedHashMap](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomLinkedHashMap.java)                          
-- [Custom LinkedHashSet](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomLinkedHashSet.java)                          
-     
-     
-### Custom Semaphore                
-### Custom ReentrantLock                
-### Custom ReentrantReadWriteLock               
-### Producer Consumer BlockingQueue             
-### Producer Consumer WaitNotify                
-                    
-### LRU Cache               
-### HashMap             
-### LFU Cache               
-### Min Stack               
-### Stack Using Queues              
-### Queue Using Stack               
-### Custom ArrayList                
-### Custom BlockingQueue                
-### Custom Dequeue              
-### Custom HashSet              
-### Custom LinkedHashMap                
-### Custom LinkedHashSet                
-       
 ### Custom Connection Pool          
 - [Custom Connection Pool](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/customConnectionPool/BasicConnectionPool.java)               
 
@@ -373,6 +325,7 @@
             }
         }
 
+### Custom Semaphore                
 - [Custom Semaphore](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/SemaphoreCustom.java)                                              
 
 
@@ -394,6 +347,7 @@
             }
         }
      
+### Custom ReentrantLock                
 - [Custom ReentrantLock](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/ReentrantLockCustom.java)                                      
 
 
@@ -443,6 +397,7 @@
             }
         }
 
+### Custom ReentrantReadWriteLock               
 - [Custom ReentrantReadWriteLock](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/ReentrantReadWriteLock.java)                          
 
 
@@ -509,6 +464,7 @@
             }
 }
                   
+### Producer Consumer BlockingQueue             
 - [Producer Consumer BlockingQueue](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/ProducerConsumerBlockingQueue.java)                 
 
 
@@ -567,6 +523,7 @@
             }
         } 
                   
+### Producer Consumer WaitNotify                
 - [Producer Consumer WaitNotify](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/ProducerConsumerWaitNotify.java)                       
 
 
@@ -651,6 +608,7 @@
             }
         }
         
+### LRU Cache               
 - [LRU Cache](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/data-structures/src/LRUCache146_V2.java)                                        
 
 
@@ -725,6 +683,7 @@
             }
         }
 
+### HashMap             
 - [HashMap](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/data-structures/src/DesignHashMap706.java)                                        
 
 
@@ -808,6 +767,7 @@
             }
         }
 
+### LFU Cache               
 - [LFU Cache](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/data-structures/src/LFUCache460_V2.java)                        
 
 
@@ -929,6 +889,7 @@
         
         }
 
+### Min Stack               
 - [Min Stack](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/data-structures/src/MinStack155.java)                       
 
 
@@ -967,6 +928,7 @@
             }
         }
 
+### Stack Using Queues              
 - [Stack Using Queues](https://github.com/dxjoshi/leetcode/blob/9228b4378d7d70c8b397c3b4af38aab5e3b2dd75/data-structures/src/StackUsingQueues_225.java)                         
 
 
@@ -998,6 +960,7 @@
         
         }
 
+### Queue Using Stack               
 - [Queue Using Stack](https://github.com/dxjoshi/leetcode/blob/9228b4378d7d70c8b397c3b4af38aab5e3b2dd75/data-structures/src/QueueUsingStack_232.java)                               
 
 
@@ -1031,6 +994,7 @@
             }
         }
 
+### Custom ArrayList                
 - [Custom ArrayList](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/ArrayListCustom.java)                                          
 
 
@@ -1095,6 +1059,7 @@
             }
         }
 
+### Custom BlockingQueue                
 - [Custom BlockingQueue](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/BlockingQueueCustomTest.java)                          
 
 
@@ -1142,6 +1107,7 @@
             }
         }
         
+### Custom Dequeue              
 - [Custom Dequeue](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomDequeue.java)                          
 
 
@@ -1246,6 +1212,7 @@
         
         }
 
+### Custom HashSet              
 - [Custom HashSet](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomHashSet.java)                              
 
         
@@ -1297,6 +1264,7 @@
             }
         }
 
+### Custom LinkedHashMap                
 - [Custom LinkedHashMap](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomLinkedHashMap.java)                                      
 
 
@@ -1576,6 +1544,7 @@
             }
         }
  
+### Custom LinkedHashSet                
 - [Custom LinkedHashSet](https://github.com/dxjoshi/leetcode/blob/0653ff88be0c51b9e2b6337b271caad0c1e54415/custom-implementation/src/CustomLinkedHashSet.java)                                      
 
 
