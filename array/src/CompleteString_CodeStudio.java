@@ -1,49 +1,34 @@
-import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class CompleteString_CodeStudio {
+
     public static String completeString(int n, String[] a) {
-
-        String ans = "";
-
-        HashMap < String, Integer > mp = new HashMap< >();
-
-        // Storing all strings in hashmap.
-        for (int i = 0; i < n; i++) {
-            mp.put(a[i], 1);
+        Set<String> set = new HashSet<>();
+        for(String each : a) {
+            set.add(each);
         }
 
-        for (int i = 0; i < n; i++) {
-            String pre = "";
-            boolean flag = true;
-            // Traversing over all prefixes of the string 'a[i]'.
-            for (int j = 0; j < a[i].length(); j++) {
-                pre += a[i].charAt(j);
-                // If current prefix is not present in map, this string is invalid.
-                if (mp.containsKey(pre));
-                else {
-                    flag = false;
-                    break;
-                }
-            }
-
-            // Current string is a valid string.
-            if (flag) {
-                // If current string is longer than ans, we update it.
-                if (ans.length() < a[i].length()) {
-                    ans = a[i];
-                }
-                // If current string is of same length as 'ans', but lexicographically smaller, we update it.
-                else if (ans.length() == a[i].length() && ans.compareTo(a[i]) > 0) {
-                    ans = a[i];
-                }
+        String result = null;
+        for(String each : a) {
+            if (containsAll(each, set)) {
+                if (result == null || result.length() < each.length()) result = each;
+                else if (result.length() == each.length() && result.compareTo(each) > 0) result = each;
             }
         }
 
-        // If there is no valid answer, we return "None".
-        if (ans.length() == 0) {
-            ans = "None";
+        if ( result == null) result = "None";
+        return result;
+    }
+
+    public static boolean containsAll(String word, Set<String> set) {
+        String prefix = "";
+        for(char c : word.toCharArray()) {
+            prefix += c;
+            if (!set.contains(prefix)) {
+                return false;
+            }
         }
-        // Return the final result.
-        return ans;
+        return true;
     }
 }

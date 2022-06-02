@@ -37,4 +37,25 @@ public class AllocateBooks_BinarySearch {
         // return res -> this is also correct
         return low;
     }
+
+    public static int books2(ArrayList<Integer> A, int B) {
+        int lo = 1;
+        int hi = 0;
+        int mid = 0;
+        for(Integer i : A) {
+            lo = Math.min(lo, i);
+            hi += i;
+        }
+        int res = 0;
+        while (lo <= hi) {
+            mid = lo +(hi-lo)/2;
+            if (isPossible(A, mid, B)) {
+                hi = mid-1;
+                res = mid;
+            } else {
+                lo = mid+1;
+            }
+        }
+        return res;
+    }
 }
