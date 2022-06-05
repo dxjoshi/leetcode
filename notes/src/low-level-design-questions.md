@@ -1,29 +1,31 @@
 ## Popular Java LLD questions solution
 
-### Original Links        
-- [Ace Machine Coding Round](#ace-machine-coding-round)         
-- [Shopping Cart LLD](https://drive.google.com/file/d/1kGkbH0aTWl8riru9qX-dLG8MkBLlW2P9/view)       
-- [Hotel Management LLD](https://drive.google.com/file/d/1GFDk4DBOtefSbuUioAQ5D3T2-cH9m47l/view)             
-- [Library Management LLD](https://drive.google.com/file/d/1Ei_-35j6jqAq716n4Skfa0-ohPlp4kma/view)               
-- [Ticketmaster/BookMyShow LLD](https://drive.google.com/file/d/1sFRpPiT7g3e-giiqt2Fuzara5Am_JtzE/view)              
-- [ATM LLD](https://drive.google.com/file/d/1jN0V5eCjETnI3XLfqCncWzapSLWPSqMV/view)              
-- [Chess LLD](https://drive.google.com/file/d/10nHLISCMcpgn6yl-0C1FgW303CLrD1S7/view)       
-- [Parking Lot LLD](https://drive.google.com/file/d/1cDLJQA4_RiqE5d2cCekhpTuVfLDnT_o0/view)         
-- [StackOverflow LLD](https://drive.google.com/file/d/1w7Hlq6bsafqghunb9xhqsCR2XMFY2e2f/view)           
+|Original Links|Link to Source Code|
+|---|---|
+|[Shopping Cart LLD](https://drive.google.com/file/d/1kGkbH0aTWl8riru9qX-dLG8MkBLlW2P9/view)|[Shopping Cart LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/AMZN.java)|     
+|[Hotel Management LLD](https://drive.google.com/file/d/1GFDk4DBOtefSbuUioAQ5D3T2-cH9m47l/view)|[Hotel Management LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/HMS.java)|        
+|[Library Management LLD](https://drive.google.com/file/d/1Ei_-35j6jqAq716n4Skfa0-ohPlp4kma/view)|[Library Management LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/LMS.java)|        
+|[Ticketmaster/BookMyShow LLD](https://drive.google.com/file/d/1sFRpPiT7g3e-giiqt2Fuzara5Am_JtzE/view)|[Ticketmaster/BookMyShow LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/BMS.java)|      
+|[ATM LLD](https://drive.google.com/file/d/1jN0V5eCjETnI3XLfqCncWzapSLWPSqMV/view)|[ATM LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/ATM.java)|      
+|[Chess LLD](https://drive.google.com/file/d/10nHLISCMcpgn6yl-0C1FgW303CLrD1S7/view)|[Chess LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/Chess.java)|        
+|[Parking Lot LLD](https://drive.google.com/file/d/1cDLJQA4_RiqE5d2cCekhpTuVfLDnT_o0/view)|[Parking Lot LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/ParkingLot.java)|       
+|[StackOverflow LLD](https://drive.google.com/file/d/1w7Hlq6bsafqghunb9xhqsCR2XMFY2e2f/view)|[StackOverflow LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/StackOverflow.java)|        
+
+
+### Topics              
+- [Ace Machine Coding Round](#ace-machine-coding-round)             
+- [Shopping Cart LLD](#shopping-cart-lld)               
+- [Hotel Management LLD](#hotel-management-lld)             
+- [Library Management LLD](#library-management-lld)             
+- [Ticketmaster/BookMyShow LLD](#bookmyshow-lld)                
+- [ATM LLD](#atm-lld)               
+- [Chess LLD](#chess-lld)               
+- [Parking Lot LLD](#parking-lot-lld)               
+- [StackOverflow LLD](#stackoverflow-lld)               
                
-               
-### Link to Source Code         
-- [Shopping Cart LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/AMZN.java)               
-- [Hotel Management LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/HMS.java)             
-- [Library Management LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/LMS.java)               
-- [Ticketmaster/BookMyShow LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/BMS.java)              
-- [ATM LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/ATM.java)              
-- [Chess LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/Chess.java)       
-- [Parking Lot LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/ParkingLot.java)         
-- [StackOverflow LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/StackOverflow.java)           
      
        
-### Solutions     
+### Shopping Cart LLD               
 - [Shopping Cart LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/AMZN.java)                     
 
 
@@ -203,6 +205,7 @@
             boolean sendNotification(MessageAttribute meesageAttribute);
         }
    
+### Hotel Management LLD                
 - [Hotel Management LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/HMS.java)                   
 
 
@@ -349,6 +352,7 @@
             public RoomBooking cancelBooking(int bookingId);
         }
   
+### Library Management LLD              
 - [Library Management LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/LMS.java)                 
 
 
@@ -476,6 +480,7 @@
             public double calculateFine(int days);
         }
       
+### BookMyShow LLD              
 - [Ticketmaster/BookMyShow LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/BMS.java)            
 
 
@@ -613,6 +618,7 @@
             UNPAID, PENDING, COMPLETED, DECLINED, CANCELLED, REFUNDED;
         }
           
+### ATM LLD             
 - [ATM LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/ATM.java)                    
 
 
@@ -767,6 +773,7 @@
             WITHDRAW, DEPOSIT, TRANSFER;
         }
 
+### Chess LLD               
 - [Chess LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/Chess.java)            
 
 
@@ -880,6 +887,7 @@
             public boolean validate(CellPosition fromPosition, CellPositionb toPosition);
         }
 
+### Parking Lot LLD             
 - [Parking Lot LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/ParkingLot.java)                 
 
 
@@ -1011,6 +1019,7 @@
             UNPAID, PENDING, COMPLETED, DECLINED, CANCELLED, REFUNDED;
         }
 
+### StackOverflow LLD               
 - [StackOverflow LLD](https://github.com/dxjoshi/leetcode/blob/8e15fc3955461073cb94559e61e38cb5a2a97814/low-level-design/src/StackOverflow.java)            
 
 
