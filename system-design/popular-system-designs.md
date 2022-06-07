@@ -20,6 +20,8 @@
 - [Bloom Filter](https://medium.com/system-design-blog/bloom-filter-a-probabilistic-data-structure-12e4e5cf0638)            
 - [Introduction to architecting systems for scale](https://lethain.com/introduction-to-architecting-systems-for-scale/)         
 - [Push based message queues](https://livebook.manning.com/book/activemq-in-action/chapter-13/80)                   
+- [Zookeeper Intro - Video](https://www.youtube.com/watch?v=AS5a91DOmks)          
+- [Zookeeper Explained - Video](https://www.youtube.com/watch?v=gZj16chk0Ss)
 
 ### Topics          
 - [System Design Template](#system-design-template)             
