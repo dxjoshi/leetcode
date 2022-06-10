@@ -16,12 +16,19 @@
 - [Near Cache Hybrid - Video](https://www.youtube.com/watch?v=uBqysgyyquk&list=PLdsOZAx8I5umhnn5LLTNJbFgwA3xbycar&index=58)    
 - [Choosing Right Caching Topology - Video](https://www.youtube.com/watch?v=vo8-HZjXjvc&list=PLdsOZAx8I5umhnn5LLTNJbFgwA3xbycar&index=57)
 - [Kafka vs Messaging Queues - Video](https://www.youtube.com/watch?v=lwMjjTT1Q-Q&list=PLdsOZAx8I5umhnn5LLTNJbFgwA3xbycar&index=135)                  
-- [Kafka Error Handling](https://blogs.perficient.com/2021/02/15/kafka-consumer-error-handling-retry-and-recovery/)         
+- [Kafka Error Handling](https://blogs.perficient.com/2021/02/15/kafka-consumer-error-handling-retry-and-recovery/)     
+- [Confluent Kafka Error Handling](https://www.confluent.io/blog/error-handling-patterns-in-kafka/)         
+- [Kafka failure handling strategies](https://quarkus.io/blog/kafka-failure-strategy/#:~:text=The%20Kafka%20connector%20proposes%20three%20strategies%20to%20handle%20failures.&text=ignore%20continues%20the%20processing%20even,Kafka%20topic%20for%20further%20investigation.)               
+- [DZone Kafka Error Handling](https://dzone.com/articles/spring-for-apache-kafka-deep-dive-part-1-error-han)                             
 - [Bloom Filter](https://medium.com/system-design-blog/bloom-filter-a-probabilistic-data-structure-12e4e5cf0638)            
 - [Introduction to architecting systems for scale](https://lethain.com/introduction-to-architecting-systems-for-scale/)         
 - [Push based message queues](https://livebook.manning.com/book/activemq-in-action/chapter-13/80)                   
 - [Zookeeper Intro - Video](https://www.youtube.com/watch?v=AS5a91DOmks)          
 - [Zookeeper Explained - Video](https://www.youtube.com/watch?v=gZj16chk0Ss)        
+- [Introduction to architecting systems for scale](https://lethain.com/introduction-to-architecting-systems-for-scale/)     
+- [MongoDB - Intro](https://www.mongodb.com/what-is-mongodb)            
+- [MongoDB - Documentation](https://www.mongodb.com/docs/manual/)           
+
 
 ### Topics          
 - [System Design Template](#system-design-template)             
@@ -400,4 +407,5 @@
     • If you get stuck, don't hesitate to ask for hints.
     • Again, communicate. Don't think in silence.
     • Don’t think your interview is done once you give the design. You are not done until your interviewer says you are done. 
-      Ask for feedback early and often.     
+      Ask for feedback early and often.
+           
