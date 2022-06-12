@@ -29,8 +29,20 @@
 - [Zookeeper Explained - Video](https://www.youtube.com/watch?v=gZj16chk0Ss)        
 - [Introduction to architecting systems for scale](https://lethain.com/introduction-to-architecting-systems-for-scale/)     
 - [MongoDB - Intro](https://www.mongodb.com/what-is-mongodb)            
-- [MongoDB - Documentation](https://www.mongodb.com/docs/manual/)           
-
+- [MongoDB - Documentation](https://www.mongodb.com/docs/manual/)     
+- [Apache Cassandra Documents](https://cassandra.apache.org/doc/latest/cassandra/architecture/index.html)           
+- [Cassandra Architecture Article](https://www.instaclustr.com/blog/cassandra-architecture/)        
+- [DataStax Cassandra Architecture in brief](https://docs.datastax.com/en/cassandra-oss/3.0/cassandra/architecture/archTOC.html)   
+- [Cassandra Partitions Introduction](https://cassandra.apache.org/doc/latest/cassandra/data_modeling/intro.html)                    
+- [Zookeeper Architecture Explained](https://zookeeper.apache.org/doc/r3.5.1-alpha/zookeeperOver.html)          
+- [Redis Intro Article](https://www.instaclustr.com/blog/its-an-in-memory-key-value-store-its-a-database-its-redis/)
+- [Redis Data Structures](https://www.instaclustr.com/blog/its-an-in-memory-key-value-store-its-a-database-its-redis/)      
+- [Redis replication & clustering article](http://qnimate.com/overview-of-redis-architecture/)          
+- [Elasticsearch Concepts Article](https://buildingvts.com/elasticsearch-architectural-overview-a35d3910e515)
+- [Istio Service Mesh - Video](https://www.youtube.com/watch?v=16fgzklcF7Y)             
+- [Istio - IBM Video](https://www.youtube.com/watch?v=6zDrLvpfCK4)          
+- [Kubernetes Intro - Video](https://www.youtube.com/watch?v=VnvRFRk_51k)           
+- [Kubernetes Architecture - Video](https://www.youtube.com/watch?v=umXEmn3cMWY)                                     
 
 ### Topics          
 - [System Design Template](#system-design-template)             
