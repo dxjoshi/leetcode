@@ -1,6 +1,7 @@
 ## System Design Notes
 
-- [Donne Martin System Design Primer](https://github.com/donnemartin/system-design-primer/blob/master/README.md)                     
+- [Donne Martin System Design Primer](https://github.com/donnemartin/system-design-primer/blob/master/README.md)   
+- [All System Design Diagrams](https://drive.google.com/drive/u/0/folders/1XrT_AvcgaGhhjvqGIQtjjkIHqfknFu7c)                              
        
 ### Useful Links            
 - [Scalable Logging Architecture](https://www.elastic.co/guide/en/logstash/current/deploying-and-scaling.html)           
