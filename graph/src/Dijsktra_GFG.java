@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
 //https://takeuforward.org/data-structure/dijkstras-algorithm-shortest-distance/
@@ -10,33 +12,24 @@ public class Dijsktra_GFG {
             node = n;
         }
     }
-    static int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S)
-    {
-
+    static int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S) {
         int[] res = new int[V];
-        for(int i=0; i<V; i++) {
-            res[i] = Integer.MAX_VALUE;
-        }
+        Arrays.fill(res, Integer.MAX_VALUE);
         res[S] = 0;
 
         // dist-node
-        PriorityQueue<Entry> pq = new PriorityQueue<>((a, b) -> a.dist-b.dist);
+        PriorityQueue<Entry> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a.dist));
         pq.add(new Entry(0, S));
 
         while(!pq.isEmpty())    {
-            Entry entry = pq.peek();
-            pq.poll();
+            Entry entry = pq.poll();
             int node = entry.node;
-            int dist = entry.dist;
-            ArrayList<ArrayList<Integer>> entryList = adj.get(node);
-
-            for(ArrayList<Integer> list : entryList)    {
+            for(ArrayList<Integer> list : adj.get(node))    {
                 int cNode = list.get(0);
                 int cDist = list.get(1);
                 if  (res[cNode] > cDist+res[node]) {
                     res[cNode] = cDist+res[node];
-                    Entry cEntry = new Entry(res[cNode], cNode);
-                    pq.offer(cEntry);
+                    pq.offer(new Entry(res[cNode], cNode));
                 }
             }
         }
